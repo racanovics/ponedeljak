@@ -1,0 +1,40 @@
+~inc:header.inc~
+<script language="JavaScript" src="javascript/keyboard.js"></script>
+<div id="content">
+
+<div id="status">
+	<div id="loading" style="display:none">Erreur : <br />Connexion perdue.</div>
+	<div id="display">
+		<span style="float:right;font-size:9px;font-weight:normal;padding-top:8px;text-indent:0px"></span>
+		<p>Vitesse : <span id="vitesse" style="font-weight:normal">?</span></p>	
+		<p>Sens : <span id="sens" style="font-weight:normal">?</span></p>
+		<p>Direction : <span id="direction" style="font-weight:normal">?</span></p>	
+		</div>
+</div>
+
+<h2>Controle</h2>
+
+Pour diriger le robot : 
+
+<TABLE BORDER>
+<TR><TD ROWSPAN=2>Vitesse</TD><TD>A (Vitesse +)</TD></TR>
+<TR><TD>Z (Vitesse -)</TD></TR>
+<TR><TD ROWSPAN=2>Direction</TD><TD>-> (Droite)</TD></TR>
+<TR><TD><- (Gauche)</TD></TR>
+<TR><TD ROWSPAN=2>Controle</TD><TD>&uarr; (Avant)</TD></TR>
+<TR><TD>&rarr; (Arrière)</TD></TR>
+</TABLE>
+
+</div>
+
+<script type="text/javascript">
+<!--
+setTimeout("newAJAXCommand('status.xml', updateStatus, true)",500);
+//-->
+</script>
+<script language="javascript">
+document.onkeydown = applyKey;
+document.onkeyup = applyKey2;
+</script>
+~inc:footer.inc~
+

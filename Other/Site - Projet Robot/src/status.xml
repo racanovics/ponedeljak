@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+ <response>
+	<vitesse>~vitesse_pwm~</vitesse>
+	<direction>~direction_pwm~</direction>
+	<sens>~avant_arriere~</sens>
+	<zero>~zero_bute~</zero>
+	<haut>~haut_bute~</haut>
+	<bas>~bas_bute~</bas>
+	<pot>~pot_value~</pot>
+	<incdir>~incdir~</incdir>
+	<incvit>~incvit~</incvit>
+ </response>

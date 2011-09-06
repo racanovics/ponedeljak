@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="Common" displayName="Common" projectFiles="true">
+        <itemPath>Microchip/Include/Compiler.h</itemPath>
+        <itemPath>Microchip/Include/GenericTypeDefs.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
+        <itemPath>FreeRTOS/Source/include/FreeRTOS.h</itemPath>
+        <itemPath>FreeRTOS/Source/portable/MPLAB/PIC32MX/ISR_Support.h</itemPath>
+        <itemPath>FreeRTOS/Source/include/StackMacros.h</itemPath>
+        <itemPath>FreeRTOS/Source/include/list.h</itemPath>
+        <itemPath>FreeRTOS/Source/include/mpu_wrappers.h</itemPath>
+        <itemPath>FreeRTOS/Source/include/portable.h</itemPath>
+        <itemPath>FreeRTOS/Source/portable/MPLAB/PIC32MX/portmacro.h</itemPath>
+        <itemPath>FreeRTOS/Source/include/projdefs.h</itemPath>
+        <itemPath>FreeRTOS/Source/include/queue.h</itemPath>
+        <itemPath>FreeRTOS/Source/include/semphr.h</itemPath>
+        <itemPath>FreeRTOS/Source/include/task.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Hardware" displayName="Hardware" projectFiles="true">
+        <itemPath>Hardware/HardwareProfile EXPLORER_16_MRF24WB0M C32.h</itemPath>
+        <itemPath>HardwareProfile.h</itemPath>
+        <itemPath>Hardware/TCPIPConfig MRF24WB0M.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="TCP-IP Stack"
+                     displayName="TCP-IP Stack"
+                     projectFiles="true">
+        <itemPath>Microchip/Include/TCPIP Stack/ARCFOUR.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/ARP.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/BigInt.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/DHCP.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/Delay.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/ENC28J60.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/HTTP2.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/Hashes.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/Helpers.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/ICMP.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/IP.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/LCDBlocking.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/MAC.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/MPFS2.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/RSA.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/Random.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/Reboot.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/SPIFlash.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/StackTsk.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/TCP.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/TCPIP.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/Tick.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/UDP.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/UDPPerformanceTest.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/XEEPROM.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/regdef.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="WI-FI Stack" displayName="WI-FI Stack" projectFiles="true">
+        <itemPath>Microchip/Include/TCPIP Stack/WFApi.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFConsole.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFConsoleIfconfig.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFConsoleIwconfig.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFConsoleIwpriv.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFConsoleMsgHandler.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFConsoleMsgs.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFDriverPrv.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFEasyConfig.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFMac.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFMgmtMsg.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WFRaw.h</itemPath>
+        <itemPath>Microchip/Include/TCPIP Stack/WF_ConfigTemplate.h</itemPath>
+      </logicalFolder>
+      <itemPath>FreeRTOSConfig.h</itemPath>
+      <itemPath>HTTPPrint.h</itemPath>
+      <itemPath>TCPIPConfig.h</itemPath>
+      <itemPath>WF_Config.h</itemPath>
+      <itemPath>main.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LibraryFiles"
+                   displayName="Library Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ObjectFiles"
+                   displayName="Object Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="App Functions"
+                     displayName="App Functions"
+                     projectFiles="true">
+        <itemPath>App_HTTP_custom.c</itemPath>
+        <itemPath>App_functions.c</itemPath>
+        <itemPath>App_init.c</itemPath>
+        <itemPath>RTOS_init.c</itemPath>
+        <itemPath>TCPIP_init.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
+        <itemPath>FreeRTOS/Source/portable/MemMang/heap_1.c</itemPath>
+        <itemPath>FreeRTOS/Source/portable/MPLAB/PIC32MX/isr_wrapper.S</itemPath>
+        <itemPath>FreeRTOS/list.c</itemPath>
+        <itemPath>FreeRTOS/Source/portable/MPLAB/PIC32MX/port.c</itemPath>
+        <itemPath>FreeRTOS/Source/portable/MPLAB/PIC32MX/port_asm.S</itemPath>
+        <itemPath>FreeRTOS/queue.c</itemPath>
+        <itemPath>FreeRTOS/tasks.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="FreeRTOS Tasks"
+                     displayName="FreeRTOS Tasks"
+                     projectFiles="true">
+        <itemPath>Task_DebugUART.c</itemPath>
+        <itemPath>Task_HTTP.c</itemPath>
+        <itemPath>Task_Network.c</itemPath>
+        <itemPath>Task_control.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="TCP-IP Stack"
+                     displayName="TCP-IP Stack"
+                     projectFiles="true">
+        <itemPath>Microchip/TCPIP Stack/ARCFOUR.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/ARP.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/BigInt.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/BigInt_helper_C32.S</itemPath>
+        <itemPath>Microchip/TCPIP Stack/DHCPs.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/Delay.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/HTTP2.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/Hashes.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/Helpers.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/ICMP.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/IP.c</itemPath>
+        <itemPath>IperfApp.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/LCDBlocking.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/MPFS2.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/NBNS.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/RSA.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/Random.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/Reboot.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/SPIEEPROM.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/StackTsk.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/TCP.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/Tick.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/UDP.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="WI-FI Stack" displayName="WI-FI Stack" projectFiles="true">
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFConnectionAlgorithm.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFConnectionManager.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFConnectionProfile.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFConsole.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFConsoleIfconfig.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFConsoleIwconfig.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFConsoleIwpriv.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFConsoleMsgHandler.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFConsoleMsgs.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFDataTxRx.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFDriverCom.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFDriverRaw.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFEasyConfig.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFEventHandler.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFInit.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFMac.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFMgmtMsg.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFParamMsg.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFPowerSave.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFScan.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WFTxPower.c</itemPath>
+        <itemPath>WF_Config.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WF_Eint.c</itemPath>
+        <itemPath>Microchip/TCPIP Stack/WiFi/WF_Spi.c</itemPath>
+      </logicalFolder>
+      <itemPath>Main.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="default" type="2">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <targetDevice>PIC32MX795F512L</targetDevice>
+        <targetHeader></targetHeader>
+        <platformTool>ICD3PlatformTool</platformTool>
+        <languageToolchain>C32</languageToolchain>
+        <languageToolchainVersion>1.11</languageToolchainVersion>
+        <platform>2</platform>
+      </toolsSet>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <C32>
+        <property key="additional-warnings" value="true"/>
+        <property key="extra-include-directories"
+                  value="FreeRTOS/Source/portable/MPLAB/PIC32MX;FreeRTOS/Source/include;.;Microchip/Include;Microchip/Include/TCPIP Stack;.;.;.;.;.;Hardware;.;"/>
+        <property key="preprocessor-macros" value="EXPLORER_16_MRF24WB0M"/>
+        <property key="exclude-floating-point" value="false"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="pre-instruction-scheduling" value="default"/>
+        <property key="use-indirect-calls" value="false"/>
+        <property key="strict-ansi" value="false"/>
+        <property key="support-ansi" value="false"/>
+        <property key="optimization-level" value=""/>
+        <property key="place-data-into-section" value="false"/>
+        <property key="post-instruction-scheduling" value="default"/>
+        <property key="enable-omit-frame-pointer" value="false"/>
+        <property key="enable-unroll-loops" value="false"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="isolate-each-function" value="false"/>
+      </C32>
+      <C32-AS>
+        <property key="omit-debug-dirs" value="false"/>
+        <property key="extra-include-directories-for-assembler" value=".;"/>
+        <property key="preprocessor-macros" value="EXPLORER_16_MRF24WB0M"/>
+        <property key="exclude-floating-point-library" value="false"/>
+        <property key="list-file" value=""/>
+        <property key="list-assembly" value="false"/>
+        <property key="list-source" value="false"/>
+        <property key="extra-include-directories-for-preprocessor"
+                  value="FreeRTOS/Source/portable/MPLAB/PIC32MX;FreeRTOS/Source/include;.;Microchip/Include;Microchip/Include/TCPIP Stack;.;.;.;.;.;Hardware;.;"/>
+        <property key="warning-level" value=""/>
+        <property key="list-section-info" value="false"/>
+        <property key="omit-forms" value="false"/>
+        <property key="list-symbols" value="false"/>
+        <property key="keep-locals" value="false"/>
+        <property key="false-conditionals" value="false"/>
+        <property key="expand-macros" value="false"/>
+        <property key="assembler-symbols" value=""/>
+      </C32-AS>
+      <C32-LD>
+        <property key="exclude-floating-point-library" value="false"/>
+        <property key="optimization-level" value=""/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="warn-section-align" value="false"/>
+        <property key="heap-size" value=""/>
+        <property key="no-startup-files" value="false"/>
+        <property key="remove-unused-sections" value="false"/>
+        <property key="stack-size" value=""/>
+        <property key="linker-symbols" value=""/>
+        <property key="trace-symbols" value=""/>
+        <property key="map-file" value="&quot;${DISTDIR}/wifi-cat.${IMAGE_TYPE}.map&quot;"/>
+        <property key="exclude-standard-libraries" value="false"/>
+        <property key="generate-cross-reference-file" value="false"/>
+        <property key="input-libraries" value=""/>
+        <property key="enable-check-sections" value="false"/>
+        <property key="symbol-stripping" value=""/>
+        <property key="extra-lib-directories" value=".;"/>
+      </C32-LD>
+      <C32Global>
+        <property key="legacy-libc" value="false"/>
+        <property key="no-start-files" value="false"/>
+      </C32Global>
+      <ICD3PlatformTool>
+        <property key="tracecontrol.portselect" value="0"/>
+        <property key="tracecontrol.select" value="0"/>
+        <property key="tracecontrol.medium" value="1"/>
+      </ICD3PlatformTool>
+    </conf>
+  </confs>
+</configurationDescriptor>
