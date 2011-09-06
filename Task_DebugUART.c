@@ -9,7 +9,6 @@
 
 #include "main.h"
 
-
 /********************************************************************
  * Tache:        void TaskDebugUart(void *pvParameters)
  *

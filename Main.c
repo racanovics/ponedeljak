@@ -175,5 +175,3 @@ int main(void){
             UARTputs("SYSTEM ERROR : return to main !\r");
         }
 }
-
-
