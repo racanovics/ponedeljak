@@ -96,6 +96,7 @@
                      displayName="App Functions"
                      projectFiles="true">
         <itemPath>App_HTTP_custom.c</itemPath>
+        <itemPath>App_UDP.c</itemPath>
         <itemPath>App_functions.c</itemPath>
         <itemPath>App_init.c</itemPath>
         <itemPath>RTOS_init.c</itemPath>
@@ -198,16 +199,16 @@
         </linkerTool>
       </compileType>
       <C32>
-        <property key="additional-warnings" value="true"/>
         <property key="extra-include-directories"
                   value="FreeRTOS/Source/portable/MPLAB/PIC32MX;FreeRTOS/Source/include;.;Microchip/Include;Microchip/Include/TCPIP Stack;.;.;.;.;.;Hardware;.;"/>
+        <property key="additional-warnings" value="true"/>
         <property key="preprocessor-macros" value="EXPLORER_16_MRF24WB0M"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="make-warnings-into-errors" value="false"/>
         <property key="pre-instruction-scheduling" value="default"/>
         <property key="use-indirect-calls" value="false"/>
-        <property key="strict-ansi" value="false"/>
         <property key="support-ansi" value="false"/>
+        <property key="strict-ansi" value="false"/>
         <property key="optimization-level" value=""/>
         <property key="place-data-into-section" value="false"/>
         <property key="post-instruction-scheduling" value="default"/>
@@ -222,11 +223,11 @@
         <property key="preprocessor-macros" value="EXPLORER_16_MRF24WB0M"/>
         <property key="exclude-floating-point-library" value="false"/>
         <property key="list-file" value=""/>
-        <property key="list-assembly" value="false"/>
         <property key="list-source" value="false"/>
+        <property key="list-assembly" value="false"/>
+        <property key="warning-level" value=""/>
         <property key="extra-include-directories-for-preprocessor"
                   value="FreeRTOS/Source/portable/MPLAB/PIC32MX;FreeRTOS/Source/include;.;Microchip/Include;Microchip/Include/TCPIP Stack;.;.;.;.;.;Hardware;.;"/>
-        <property key="warning-level" value=""/>
         <property key="list-section-info" value="false"/>
         <property key="omit-forms" value="false"/>
         <property key="list-symbols" value="false"/>

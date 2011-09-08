@@ -22,15 +22,16 @@
  *******************************************************************/
 
 void RTOSInit(void){
-
 /*** QUEUE Create ***/	
 	xQueueAcquiData = xQueueCreate( 1, sizeof(struct_mesures)); 	// Post des mesures depuis l'ISR vers la tâche pour la commande/contrôle/supervision
 	xQueueDebugPrint = xQueueCreate(1, sizeof(struct_DebugPrint)); 	// Post de grandeurs intémerdiaires pour le debug vers la tâche d'affichage
 	xQueueDebugPrintIP = xQueueCreate(1, sizeof(BOOL)); 			// Post de la nouvelle IP en cas de changement
-
+        xQueueTX = xQueueCreate(1,sizeof(char));
+        
 /*** SEMAPHORE Create ***/	
 	vSemaphoreCreateBinary(xSemaphoreVitesse); 			// Protection variable globale vitesse
 	vSemaphoreCreateBinary(xSemaphoreConsDir); 			// Protection variable globale de consigne de direction "consDir"
+        vSemaphoreCreateBinary(xSemaphoreTX);
 
 /*** TASK Create ***/
 	

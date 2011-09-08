@@ -46,13 +46,17 @@
 /** MACROS *********************************************************/
 
 	/* App et Harware */
-	#define SYS_FREQ         	80000000		// Vitesse de travail du bus matrix (et du CPU)
-	#define DESIRED_BAUDRATE    115200			// Vitesse de travail pour la communication s�rie asynchronne (RS232)
-	#define PB_DIV              2				// Le diviseur pour le bus p�riph�rique (ATTENTION : Ne pas modifier qu'ici)
-	#define PRESCALE            1				// La valeur du Prescale
-	#define TOGGLES_PER_SEC     2000			// Le choix de la fr�quence d'�chantillonage et de d�coupage
-	#define TIMER_TICK          (SYS_FREQ/PB_DIV/PRESCALE/TOGGLES_PER_SEC) // R�glage pour le tick de timer (Ne pas modifier)
-	#define MAX_CURRENT 		14.0			// La valeur max admissible pour l'asservissement de courant
+	#define SYS_FREQ                   80000000		// Vitesse de travail du bus matrix (et du CPU)
+	#define DESIRED_BAUDRATE           115200			// Vitesse de travail pour la communication s�rie asynchronne (RS232)
+	#define PB_DIV                     2				// Le diviseur pour le bus p�riph�rique (ATTENTION : Ne pas modifier qu'ici)
+	#define PRESCALE                   1				// La valeur du Prescale
+	#define TOGGLES_PER_SEC            2000			// Le choix de la fr�quence d'�chantillonage et de d�coupage
+	#define TIMER_TICK                 (SYS_FREQ/PB_DIV/PRESCALE/TOGGLES_PER_SEC) // R�glage pour le tick de timer (Ne pas modifier)
+	#define MAX_CURRENT                14.0			// La valeur max admissible pour l'asservissement de courant
+        #define RX_MAX                     11000
+        #define UDP_LIMIT_SIZE             1472
+	#define DESIRED_BAUDRATE_CMUCAM    (57600)
+        #define MAX_COMMAND_SIZE           20
 
 	/* TCP-IP */
 	#define NETWORK_DATA_REFRESH_PERIOD		3	// p�riode de rafrachissement des data r�seau en nb de tick du noyau
@@ -91,9 +95,14 @@
 	short directionCommand(short consigne, short mesure);
 	short propulsionCommand (short ConsignePIF,float MesurePIF);
         void putrsUART2(unsigned char * String);
+
 	/* RTOS prototypes */
 	void RTOSInit(void);
 	void NetworkInit(void); 
+
+        /* Network prototypes*/
+        void UDPServer_request(void);
+        void Large_UDP_Packet(int value,UDP_SOCKET MySocket);
 
 	/* Task prototypes */
 	void TaskDebugUart(void *pvParameters);
@@ -135,10 +144,16 @@
 	xQueueHandle xQueueAcquiData;
 	xQueueHandle xQueueDebugPrint;
 	xQueueHandle xQueueDebugPrintIP;
-	xSemaphoreHandle xSemaphoreVitesse;
+        xQueueHandle xQueueTX;
+        xSemaphoreHandle xSemaphoreVitesse;
 	xSemaphoreHandle xSemaphoreConsDir;
+	xSemaphoreHandle xSemaphoreTX;
+
+        /* UART CMUcam comm variables*/
+        volatile BYTE rxbuffer[RX_MAX];
+        int count;
 	
-	/* TCP-IP prototypes */	
+        /* TCP-IP variable */
 	APP_CONFIG AppConfig;										// Declare AppConfig structure and some other supporting stack variables
 	volatile static unsigned short wOriginalAppConfigChecksum;	// Checksum of the ROM defaults for AppConfig
 	BYTE AN0String[8];

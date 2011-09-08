@@ -27,7 +27,7 @@ DWORD 	dwLastIP;
 BOOL	IPmodifBOOL = TRUE;
 
 	/* Initialisations */
-    xLastWakeTime = xTaskGetTickCount();
+        xLastWakeTime = xTaskGetTickCount();
 	dwLastIP = AppConfig.MyIPAddr.Val;
 	secondCount = xTaskGetTickCount();
 
@@ -65,8 +65,9 @@ BOOL	IPmodifBOOL = TRUE;
 			dwLastIP = AppConfig.MyIPAddr.Val;
 			xQueueSend(xQueueDebugPrintIP, &IPmodifBOOL, 0);		// non bloquant
 		}
-
-		/* Bloque la tâche durant 10 Tick (Tick du noyau) */
+         /* Call UDP server */
+         UDPServer_request();
+	/* Bloque la tâche durant 10 Tick (Tick du noyau) */
          vTaskDelayUntil( &xLastWakeTime, xFrequency );
 	}
 }

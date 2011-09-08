@@ -14,7 +14,8 @@ implementation of the portSAVE_CONTEXT and portRESTORE_CONTEXT macros. */
 	assembly file. */
  	.extern IntUart3AHandler
  	.extern IntTimer3Handler
-	
+	.extern IntUart1AWrapper
+
 	/* Required by the save and restore macros. */
 	.extern xISRStackTop
 	
@@ -88,3 +89,38 @@ IntTimer3Wrapper:
 	portRESTORE_CONTEXT
 
 	.end		IntTimer3Wrapper
+
+
+/* Make the assembler portion of the handler visible outside of this file.
+	Making the wrapper visible from C files means the C compiler key word
+	extensions can be used to populate the interrupt vector table.  See main.c
+        for an example. */
+ 	.global	IntUart1AWrapper
+
+	.set		noreorder
+	.set 		noat
+	.ent		IntUart1AWrapper
+
+/* Start of the handler implementation. */
+IntUart1AWrapper:
+
+	/* Save the context of the currently executing task.  portSAVE_CONTEXT()
+	must be called before anything else is done. */
+	portSAVE_CONTEXT
+
+	/* Call the C portion of the interrupt handler.  A NOP is always required
+	after a jal instruction. */
+	jal IntUart1AHandler
+	nop
+
+	/* Restore the context of the next task to execute - which might be a
+	different task to that which was executing before this interrupt occurred
+	(that would be the case if the interrupt handler caused a task to leave the
+	Blocked state, and the unblocked task had a priority that was equal to or
+	above the priority of the originally executing task).
+
+	portRESTORE_CONTEXT must be called at the very end and handles returning
+	from the interrupt. */
+	portRESTORE_CONTEXT
+
+	.end		IntUart1AWrapper

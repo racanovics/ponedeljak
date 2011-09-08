@@ -32,7 +32,7 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/App_HTTP_custom.o ${OBJECTDIR}/App_functions.o ${OBJECTDIR}/App_init.o ${OBJECTDIR}/FreeRTOS/Source/portable/MPLAB/PIC32MX/isr_wrapper.o ${OBJECTDIR}/FreeRTOS/Source/portable/MPLAB/PIC32MX/port.o ${OBJECTDIR}/FreeRTOS/Source/portable/MPLAB/PIC32MX/port_asm.o ${OBJECTDIR}/FreeRTOS/Source/portable/MemMang/heap_1.o ${OBJECTDIR}/FreeRTOS/list.o ${OBJECTDIR}/FreeRTOS/queue.o ${OBJECTDIR}/FreeRTOS/tasks.o ${OBJECTDIR}/IperfApp.o ${OBJECTDIR}/Main.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/ARCFOUR.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/ARP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/BigInt.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/BigInt_helper_C32.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/DHCPs.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Delay.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/HTTP2.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Helpers.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/ICMP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/IP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/LCDBlocking.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/MPFS2.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/RSA.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Random.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Reboot.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/SPIEEPROM.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/StackTsk.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/TCP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Tick.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionManager.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionProfile.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsole.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIfconfig.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwpriv.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgs.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFDataTxRx.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFDriverCom.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFDriverRaw.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEasyConfig.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFMac.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFMgmtMsg.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFPowerSave.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFScan.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFTxPower.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Eint.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o ${OBJECTDIR}/RTOS_init.o ${OBJECTDIR}/TCPIP_init.o ${OBJECTDIR}/Task_DebugUART.o ${OBJECTDIR}/Task_HTTP.o ${OBJECTDIR}/Task_Network.o ${OBJECTDIR}/Task_control.o ${OBJECTDIR}/WF_Config.o
+OBJECTFILES=${OBJECTDIR}/App_HTTP_custom.o ${OBJECTDIR}/App_UDP.o ${OBJECTDIR}/App_functions.o ${OBJECTDIR}/App_init.o ${OBJECTDIR}/FreeRTOS/Source/portable/MPLAB/PIC32MX/isr_wrapper.o ${OBJECTDIR}/FreeRTOS/Source/portable/MPLAB/PIC32MX/port.o ${OBJECTDIR}/FreeRTOS/Source/portable/MPLAB/PIC32MX/port_asm.o ${OBJECTDIR}/FreeRTOS/Source/portable/MemMang/heap_1.o ${OBJECTDIR}/FreeRTOS/list.o ${OBJECTDIR}/FreeRTOS/queue.o ${OBJECTDIR}/FreeRTOS/tasks.o ${OBJECTDIR}/IperfApp.o ${OBJECTDIR}/Main.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/ARCFOUR.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/ARP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/BigInt.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/BigInt_helper_C32.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/DHCPs.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Delay.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/HTTP2.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Helpers.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/ICMP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/IP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/LCDBlocking.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/MPFS2.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/RSA.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Random.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Reboot.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/SPIEEPROM.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/StackTsk.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/TCP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Tick.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionManager.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionProfile.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsole.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIfconfig.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwpriv.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgs.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFDataTxRx.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFDriverCom.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFDriverRaw.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEasyConfig.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFMac.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFMgmtMsg.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFPowerSave.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFScan.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFTxPower.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Eint.o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o ${OBJECTDIR}/RTOS_init.o ${OBJECTDIR}/TCPIP_init.o ${OBJECTDIR}/Task_DebugUART.o ${OBJECTDIR}/Task_HTTP.o ${OBJECTDIR}/Task_Network.o ${OBJECTDIR}/Task_control.o ${OBJECTDIR}/WF_Config.o
 
 
 CFLAGS=
@@ -537,24 +537,6 @@ endif
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEasyConfig.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEasyConfig.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEasyConfig.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o: Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o: Microchip/TCPIP\ Stack/WiFi/WF_Spi.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.d 
@@ -572,6 +554,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o: Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/RSA.o: Microchip/TCPIP\ Stack/RSA.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
@@ -609,24 +609,6 @@ endif
 	@cat ${OBJECTDIR}/RTOS_init.o.err 
 	@if [ -f ${OBJECTDIR}/RTOS_init.o.ok ] ; then rm -f ${OBJECTDIR}/RTOS_init.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o: Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o: Microchip/TCPIP\ Stack/WiFi/WFEventHandler.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.d 
@@ -644,6 +626,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o: Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/FreeRTOS/list.o: FreeRTOS/list.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/FreeRTOS 
@@ -681,24 +681,6 @@ endif
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIfconfig.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIfconfig.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIfconfig.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o: Microchip/TCPIP\ Stack/Hashes.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o Microchip/TCPIP\ Stack/Hashes.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o Microchip/TCPIP\ Stack/Hashes.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o: Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.d 
@@ -716,6 +698,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o: Microchip/TCPIP\ Stack/Hashes.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o Microchip/TCPIP\ Stack/Hashes.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o Microchip/TCPIP\ Stack/Hashes.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/App_init.o: App_init.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR} 
@@ -735,24 +735,6 @@ endif
 	@cat ${OBJECTDIR}/App_init.o.err 
 	@if [ -f ${OBJECTDIR}/App_init.o.ok ] ; then rm -f ${OBJECTDIR}/App_init.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o: Microchip/TCPIP\ Stack/NBNS.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o Microchip/TCPIP\ Stack/NBNS.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o Microchip/TCPIP\ Stack/NBNS.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o: Microchip/TCPIP\ Stack/WiFi/WFInit.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.d 
@@ -770,6 +752,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o: Microchip/TCPIP\ Stack/NBNS.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o Microchip/TCPIP\ Stack/NBNS.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o Microchip/TCPIP\ Stack/NBNS.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/Delay.o: Microchip/TCPIP\ Stack/Delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
@@ -951,6 +951,24 @@ endif
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/IP.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/IP.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/IP.o.ok; else exit 1; fi
 	
+${OBJECTDIR}/App_UDP.o: App_UDP.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/App_UDP.o.d 
+	@${RM} ${OBJECTDIR}/App_UDP.o.ok ${OBJECTDIR}/App_UDP.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/App_UDP.o.d -o ${OBJECTDIR}/App_UDP.o App_UDP.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/App_UDP.o.d -o ${OBJECTDIR}/App_UDP.o App_UDP.c   2>&1  > ${OBJECTDIR}/App_UDP.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/App_UDP.o.ok ; fi 
+	@touch ${OBJECTDIR}/App_UDP.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/App_UDP.o.d > ${OBJECTDIR}/App_UDP.o.tmp
+	@${RM} ${OBJECTDIR}/App_UDP.o.d 
+	@${CP} ${OBJECTDIR}/App_UDP.o.tmp ${OBJECTDIR}/App_UDP.o.d 
+	@${RM} ${OBJECTDIR}/App_UDP.o.tmp
+endif
+	@touch ${OBJECTDIR}/App_UDP.o.err 
+	@cat ${OBJECTDIR}/App_UDP.o.err 
+	@if [ -f ${OBJECTDIR}/App_UDP.o.ok ] ; then rm -f ${OBJECTDIR}/App_UDP.o.ok; else exit 1; fi
+	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFMac.o: Microchip/TCPIP\ Stack/WiFi/WFMac.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFMac.o.d 
@@ -1077,24 +1095,6 @@ endif
 	@cat ${OBJECTDIR}/FreeRTOS/Source/portable/MemMang/heap_1.o.err 
 	@if [ -f ${OBJECTDIR}/FreeRTOS/Source/portable/MemMang/heap_1.o.ok ] ; then rm -f ${OBJECTDIR}/FreeRTOS/Source/portable/MemMang/heap_1.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o: Microchip/TCPIP\ Stack/UDP.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o Microchip/TCPIP\ Stack/UDP.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o Microchip/TCPIP\ Stack/UDP.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o: Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.d 
@@ -1112,6 +1112,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o: Microchip/TCPIP\ Stack/UDP.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o Microchip/TCPIP\ Stack/UDP.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o Microchip/TCPIP\ Stack/UDP.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionProfile.o: Microchip/TCPIP\ Stack/WiFi/WFConnectionProfile.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
@@ -1636,24 +1654,6 @@ endif
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEasyConfig.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEasyConfig.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEasyConfig.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o: Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o: Microchip/TCPIP\ Stack/WiFi/WF_Spi.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.d 
@@ -1671,6 +1671,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WF_Spi.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o: Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o Microchip/TCPIP\ Stack/WiFi/WFParamMsg.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFParamMsg.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/RSA.o: Microchip/TCPIP\ Stack/RSA.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
@@ -1708,24 +1726,6 @@ endif
 	@cat ${OBJECTDIR}/RTOS_init.o.err 
 	@if [ -f ${OBJECTDIR}/RTOS_init.o.ok ] ; then rm -f ${OBJECTDIR}/RTOS_init.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o: Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o: Microchip/TCPIP\ Stack/WiFi/WFEventHandler.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.d 
@@ -1743,6 +1743,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFEventHandler.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o: Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleMsgHandler.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/FreeRTOS/list.o: FreeRTOS/list.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/FreeRTOS 
@@ -1780,24 +1798,6 @@ endif
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIfconfig.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIfconfig.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIfconfig.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o: Microchip/TCPIP\ Stack/Hashes.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o Microchip/TCPIP\ Stack/Hashes.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o Microchip/TCPIP\ Stack/Hashes.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o: Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.d 
@@ -1815,6 +1815,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConsoleIwconfig.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o: Microchip/TCPIP\ Stack/Hashes.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o Microchip/TCPIP\ Stack/Hashes.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o Microchip/TCPIP\ Stack/Hashes.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/Hashes.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/App_init.o: App_init.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR} 
@@ -1834,24 +1852,6 @@ endif
 	@cat ${OBJECTDIR}/App_init.o.err 
 	@if [ -f ${OBJECTDIR}/App_init.o.ok ] ; then rm -f ${OBJECTDIR}/App_init.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o: Microchip/TCPIP\ Stack/NBNS.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o Microchip/TCPIP\ Stack/NBNS.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o Microchip/TCPIP\ Stack/NBNS.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o: Microchip/TCPIP\ Stack/WiFi/WFInit.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.d 
@@ -1869,6 +1869,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFInit.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o: Microchip/TCPIP\ Stack/NBNS.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o Microchip/TCPIP\ Stack/NBNS.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o Microchip/TCPIP\ Stack/NBNS.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/NBNS.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/Delay.o: Microchip/TCPIP\ Stack/Delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
@@ -2050,6 +2068,24 @@ endif
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/IP.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/IP.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/IP.o.ok; else exit 1; fi
 	
+${OBJECTDIR}/App_UDP.o: App_UDP.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/App_UDP.o.d 
+	@${RM} ${OBJECTDIR}/App_UDP.o.ok ${OBJECTDIR}/App_UDP.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/App_UDP.o.d -o ${OBJECTDIR}/App_UDP.o App_UDP.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/App_UDP.o.d -o ${OBJECTDIR}/App_UDP.o App_UDP.c   2>&1  > ${OBJECTDIR}/App_UDP.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/App_UDP.o.ok ; fi 
+	@touch ${OBJECTDIR}/App_UDP.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/App_UDP.o.d > ${OBJECTDIR}/App_UDP.o.tmp
+	@${RM} ${OBJECTDIR}/App_UDP.o.d 
+	@${CP} ${OBJECTDIR}/App_UDP.o.tmp ${OBJECTDIR}/App_UDP.o.d 
+	@${RM} ${OBJECTDIR}/App_UDP.o.tmp
+endif
+	@touch ${OBJECTDIR}/App_UDP.o.err 
+	@cat ${OBJECTDIR}/App_UDP.o.err 
+	@if [ -f ${OBJECTDIR}/App_UDP.o.ok ] ; then rm -f ${OBJECTDIR}/App_UDP.o.ok; else exit 1; fi
+	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFMac.o: Microchip/TCPIP\ Stack/WiFi/WFMac.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFMac.o.d 
@@ -2176,24 +2212,6 @@ endif
 	@cat ${OBJECTDIR}/FreeRTOS/Source/portable/MemMang/heap_1.o.err 
 	@if [ -f ${OBJECTDIR}/FreeRTOS/Source/portable/MemMang/heap_1.o.ok ] ; then rm -f ${OBJECTDIR}/FreeRTOS/Source/portable/MemMang/heap_1.o.ok; else exit 1; fi
 	
-${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o: Microchip/TCPIP\ Stack/UDP.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
-	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o Microchip/TCPIP\ Stack/UDP.c  
-	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o Microchip/TCPIP\ Stack/UDP.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ; fi 
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
-	
-ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
-	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
-	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
-	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp
-endif
-	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
-	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
-	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok; else exit 1; fi
-	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o: Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
 	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.d 
@@ -2211,6 +2229,24 @@ endif
 	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.err 
 	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.err 
 	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionAlgorithm.o.ok; else exit 1; fi
+	
+${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o: Microchip/TCPIP\ Stack/UDP.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
+	@echo ${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o Microchip/TCPIP\ Stack/UDP.c  
+	@-${MP_CC} $(MP_EXTRA_CC_PRE)  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION) -DEXPLORER_16_MRF24WB0M -I"FreeRTOS/Source/portable/MPLAB/PIC32MX" -I"FreeRTOS/Source/include" -I"." -I"Microchip/Include" -I"Microchip/Include/TCPIP Stack" -I"." -I"." -I"." -I"." -I"." -I"Hardware" -I"." -Wall -MMD -MF ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d -o ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o Microchip/TCPIP\ Stack/UDP.c   2>&1  > ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err ; if [ $$? -eq 0 ] ; then touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ; fi 
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
+	
+ifneq (,$(findstring MINGW32,$(OS_CURRENT))) 
+	@sed -e 's/\\$$/__EOL__/g' -e 's/\\ /__ESCAPED_SPACES__/g' -e 's/\\/\//g' -e 's/__ESCAPED_SPACES__/\\ /g' -e 's/__EOL__$$/\\/g' ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d > ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
+	@${CP} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.d 
+	@${RM} ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.tmp
+endif
+	@touch ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
+	@cat ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.err 
+	@if [ -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok ] ; then rm -f ${OBJECTDIR}/Microchip/TCPIP\ Stack/UDP.o.ok; else exit 1; fi
 	
 ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi/WFConnectionProfile.o: Microchip/TCPIP\ Stack/WiFi/WFConnectionProfile.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR}/Microchip/TCPIP\ Stack/WiFi 
@@ -2453,11 +2489,11 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mdebugger -D__MPLAB_DEBUGGER_ICD3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf ${OBJECTFILES}        -Wl,--defsym=__MPLAB_BUILD=1,--report-mem$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__ICD2RAM=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_ICD3=1,-L".",-Map="${DISTDIR}/wifi-car.${IMAGE_TYPE}.map" 
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mdebugger -D__MPLAB_DEBUGGER_ICD3=1 -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf ${OBJECTFILES}        -Wl,--defsym=__MPLAB_BUILD=1,--report-mem$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),--defsym=__MPLAB_DEBUG=1,--defsym=__ICD2RAM=1,--defsym=__DEBUG=1,--defsym=__MPLAB_DEBUGGER_ICD3=1,-L".",-Map="${DISTDIR}/wifi-cat.${IMAGE_TYPE}.map" 
 else
 dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
-	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf ${OBJECTFILES}        -Wl,--defsym=__MPLAB_BUILD=1,--report-mem$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),-L".",-Map="${DISTDIR}/wifi-car.${IMAGE_TYPE}.map"
+	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf ${OBJECTFILES}        -Wl,--defsym=__MPLAB_BUILD=1,--report-mem$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),-L".",-Map="${DISTDIR}/wifi-cat.${IMAGE_TYPE}.map"
 	${MP_CC_DIR}/pic32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf  
 endif
 

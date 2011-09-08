@@ -6,8 +6,8 @@
 CND_BASEDIR=`pwd`
 # default configuration
 CND_ARTIFACT_DIR_default=dist/default/production
-CND_ARTIFACT_NAME_default=wifi-cat.production.elf
-CND_ARTIFACT_PATH_default=dist/default/production/wifi-cat.production.elf
+CND_ARTIFACT_NAME_default=wifi-car.production.elf
+CND_ARTIFACT_PATH_default=dist/default/production/wifi-car.production.elf
 CND_PACKAGE_DIR_default=${CND_DISTDIR}/default/package
-CND_PACKAGE_NAME_default=wifi-cat.tar
-CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/wifi-cat.tar
+CND_PACKAGE_NAME_default=wifi-car.tar
+CND_PACKAGE_PATH_default=${CND_DISTDIR}/default/package/wifi-car.tar

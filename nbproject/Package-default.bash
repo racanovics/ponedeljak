@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/wifi-cat.${IMAGE_TYPE}.elf
-OUTPUT_BASENAME=wifi-cat.${IMAGE_TYPE}.elf
-PACKAGE_TOP_DIR=wifi-cat/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf
+OUTPUT_BASENAME=wifi-car.${IMAGE_TYPE}.elf
+PACKAGE_TOP_DIR=wifi-car/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/wifi-cat/bin
+makeDirectory ${TMPDIR}/wifi-car/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/wifi-cat.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/wifi-car.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/wifi-cat.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/wifi-car.tar *
 checkReturnCode
 
 # Cleanup

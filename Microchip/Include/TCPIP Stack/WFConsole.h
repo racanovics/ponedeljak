@@ -53,7 +53,6 @@
 #include "TCPIP Stack/TCPIP.h"
 #include "TCPIP Stack/WFConsoleMsgHandler.h"
 
-
   #if defined(__18CXX)
   #pragma varlocate 4 g_ConsoleContext
   #endif

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=wifi-cat
+PROJECTNAME=wifi-car
 
 # Active Configuration
 DEFAULTCONF=default

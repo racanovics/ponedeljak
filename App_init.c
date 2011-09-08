@@ -40,6 +40,21 @@ void HardwareInit(void){
 			/* Contrôle - Démarrage de l'UART3A et validation des broches Rx et Tx */
 			UARTEnable(UART3A, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
 		
+                        /* Configuration - UART1A (Communication CMUcam)		*/
+			/* Broches Tx et RX uniquement, 8bits de données, pas de bit de parité,		*/
+			/* 1 bit de stop, débit  9600Bauds, aucune gestion de la FIFO (default mode)*/
+                        UARTConfigure(UART1A, UART_ENABLE_PINS_TX_RX_ONLY);
+			UARTSetLineControl(UART1A, UART_DATA_SIZE_8_BITS | UART_PARITY_NONE | UART_STOP_BITS_1);
+  			UARTSetDataRate(UART1A, GetPeripheralClock(), DESIRED_BAUDRATE_CMUCAM); // Le system performance est fait de le Network Init
+
+			/* Interrupt Configuration - démasquage IT propres à l'utilisation de l'UART1 */
+			INTClearFlag(INT_U1ARX);
+			INTSetVectorPriority(INT_UART_1A_VECTOR,INT_PRIORITY_LEVEL_2);
+			INTSetVectorSubPriority(INT_UART_1A_VECTOR,INT_SUB_PRIORITY_LEVEL_0);
+			INTEnable(INT_SOURCE_UART_RX(UART1A),INT_ENABLED);
+
+			/* Contrôle - Démarrage de l'UART1 et validation des broches Rx et Tx */
+			UARTEnable(UART1, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
 /*** ADC Configuration ***/
 
 			/* Contrôle - Arrêt de l'ADC */
@@ -98,8 +113,10 @@ void HardwareInit(void){
 
 			/* Configuration - broches RA4, RA5, RA7 en sortie TOR */	
 			PORTClearBits(IOPORT_A, BIT_7 | BIT_4 | BIT_5);
-			PORTSetPinsDigitalOut(IOPORT_A, BIT_7 | BIT_4 | BIT_5);
-
+ 			PORTSetPinsDigitalOut(IOPORT_A, BIT_7 | BIT_4 | BIT_5);
+                        /* Configuration - broches RD0, RD1, RD2 en sortie TOR */
+                        mPORTDClearBits(BIT_0 | BIT_1 | BIT_2);
+                        mPORTDSetPinsDigitalOut(BIT_0 | BIT_1 | BIT_2 );
 /*** TIMER Configuration ***/	
 
 			/* Configuration - Timer 3 pour la partie acquisition, commande, supervision de l'application */
