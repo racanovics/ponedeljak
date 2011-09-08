@@ -66,7 +66,9 @@ BOOL	IPmodifBOOL = TRUE;
 			xQueueSend(xQueueDebugPrintIP, &IPmodifBOOL, 0);		// non bloquant
 		}
          /* Call UDP server */
-         UDPServer_request();
+#if CMUcam_IS_USE
+        UDPServer_request();
+#endif
 	/* Bloque la tâche durant 10 Tick (Tick du noyau) */
          vTaskDelayUntil( &xLastWakeTime, xFrequency );
 	}

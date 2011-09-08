@@ -26,7 +26,7 @@ extern NODE_INFO remoteNode;
 	Implements a simple UDP Server.
 
   Description:
-
+        Based on Microchip exemple available on M.A.L
 
   Precondition:
 	UDP is initialized.
@@ -70,30 +70,27 @@ void UDPServer_request(void)
 			break;
 
 		case UDP_REQUEST_LISTEN :
-                        if(TickGet() - t >= TICK_SECOND/2ul)
-                        {
-                            t = TickGet();
-                            //mPORTDToggleBits(BIT_2);
-                        }
-			// Do nothing if no data is waiting
+                        // Do nothing if no data is waiting
 			if(!UDPIsGetReady(MySocket))
 				return;
 
 			// Receive the command
 			size = UDPGetArray((BYTE *)i,MAX_COMMAND_SIZE);
+                        // Alloc command variable
                         command = (BYTE *)malloc(size*sizeof(BYTE));
+                        // Define command variable
                         strncpy(command,i,size);
+                        // Send command to CMUcam
                         putsUART1(command);
 
-                        xSemaphoreTake(xSemaphoreTX,10000);
+                        xSemaphoreTake(xSemaphoreTX,portMAX_DELAY);
                         UDPDiscard();
-			// We received a discovery request, reply when we can
+			// Pass to reply case :
 			UDPRequestSM++;
+                        // No break, we must continue without re-loop
                         //break;
 			// Change the destination to the unicast address of the last received packet
                         memcpy((void*)&UDPSocketInfo[MySocket].remoteNode, (const void*)&remoteNode, sizeof(remoteNode));
-
-			// No break needed.
 
 		case UDP_REQUEST_RECEIVED:
 			if(!UDPIsPutReady(MySocket))

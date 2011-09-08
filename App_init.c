@@ -39,7 +39,7 @@ void HardwareInit(void){
 
 			/* Contrôle - Démarrage de l'UART3A et validation des broches Rx et Tx */
 			UARTEnable(UART3A, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
-		
+#if CMUcam_IS_USE
                         /* Configuration - UART1A (Communication CMUcam)		*/
 			/* Broches Tx et RX uniquement, 8bits de données, pas de bit de parité,		*/
 			/* 1 bit de stop, débit  9600Bauds, aucune gestion de la FIFO (default mode)*/
@@ -55,7 +55,8 @@ void HardwareInit(void){
 
 			/* Contrôle - Démarrage de l'UART1 et validation des broches Rx et Tx */
 			UARTEnable(UART1, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
-/*** ADC Configuration ***/
+#endif
+                        /*** ADC Configuration ***/
 
 			/* Contrôle - Arrêt de l'ADC */
 			CloseADC10();

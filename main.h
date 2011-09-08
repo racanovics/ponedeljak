@@ -77,14 +77,16 @@
 	#define BROCHE_DEBUG         IOPORT_A, BIT_7  // La broche pour les sorties de Debug
 	#define BROCHE_DIR_DIRECTION IOPORT_A, BIT_4  // La broche pour la "direction" de la direction
 	#define BROCHE_DIR_VITESSE   IOPORT_A, BIT_5  // La broche pour la "direction" de la vitesse
-	#define ISR_DELAY 			 1				  // Temps du toggle dans l'ISR d'acquisition
-	#define DEBUG_IS_ON 		 0				  // Ajout de code pour le debug (d�pendance : ISR Timer3 )
-	#define COMMANDE_DELAY 		 0				  // Temps de la tache d'asservissement
-	#define UART_DELAY 			 0				  // Temps de l'envoie via UART
+	#define ISR_DELAY            1				  // Temps du toggle dans l'ISR d'acquisition
+	#define DEBUG_IS_ON          0				  // Ajout de code pour le debug (d�pendance : ISR Timer3 )
+	#define COMMANDE_DELAY       0				  // Temps de la tache d'asservissement
+	#define UART_DELAY           0				  // Temps de l'envoie via UART
 
 	/* Wi-Fi */
-	#define WF_MODULE_NUMBER   WF_MODULE_MAIN_DEMO		// Used for Wi-Fi assertions
-	
+	#define WF_MODULE_NUMBER     WF_MODULE_MAIN_DEMO		// Used for Wi-Fi assertions
+
+        /* CMUcam */
+        #define CMUcam_IS_USE        0                 // Pour activer la communication vers la CMUcam
 /** FUNCTIONS and TASKS *********************************************/
 
 	/* App. User prototypes */
@@ -144,7 +146,7 @@
 	xQueueHandle xQueueAcquiData;
 	xQueueHandle xQueueDebugPrint;
 	xQueueHandle xQueueDebugPrintIP;
-        xQueueHandle xQueueTX;
+        
         xSemaphoreHandle xSemaphoreVitesse;
 	xSemaphoreHandle xSemaphoreConsDir;
 	xSemaphoreHandle xSemaphoreTX;
