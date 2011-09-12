@@ -21,7 +21,7 @@
 /* Appel wrapper afin d'assurer les commutations de context de FreeRTOS (isr_wrapper.S) */
 /* WRAPPER FreeRTOS : debut de sauvegarde dans la stack de la tâche interrompue		  	*/
 /* la fin se fait toujours dans le tableau xISRStack[ configISR_STACK_SIZE ] (port.c)	*/
-/* Il s'agit d'une sorte de Tas ou se font les sauvegardes de contexte de FreeRTOS		*/
+/* Il s'agit d'une sorte de Tas ou se font les sauvegardes de contexte de FreeRTOS*/
 void __ISR(_TIMER_3_VECTOR, ipl3) IntTimer3Wrapper(void);
 void __ISR(_UART_1A_VECTOR, ipl2) IntUart1AWrapper(void);
 void __ISR(_UART_3A_VECTOR,ipl1) IntUart3AWrapper(void);
