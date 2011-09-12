@@ -185,7 +185,7 @@ void ReadAuxVar(BYTE n, BYTE *var, BYTE size)
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * Théou Jean-Baptiste  7 avril 2011 Première version                                
  *******************************************************************/
-void UARTputs(unsigned char * buffer){
+void UARTputs(char * buffer){
 
 	while(*buffer != '\0'){
 

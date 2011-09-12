@@ -115,9 +115,11 @@ void HardwareInit(void){
 			/* Configuration - broches RA4, RA5, RA7 en sortie TOR */	
 			PORTClearBits(IOPORT_A, BIT_7 | BIT_4 | BIT_5);
  			PORTSetPinsDigitalOut(IOPORT_A, BIT_7 | BIT_4 | BIT_5);
+#ifdef CMUcam_IS_USE
                         /* Configuration - broches RD0, RD1, RD2 en sortie TOR */
                         mPORTDClearBits(BIT_0 | BIT_1 | BIT_2);
                         mPORTDSetPinsDigitalOut(BIT_0 | BIT_1 | BIT_2 );
+#endif
 /*** TIMER Configuration ***/	
 
 			/* Configuration - Timer 3 pour la partie acquisition, commande, supervision de l'application */

@@ -109,11 +109,9 @@ char etat_save_info = 0;
   ***************************************************************************/
 HTTP_IO_RESULT HTTPExecuteGet(void)
 {
-	BYTE *ptr, *ptr1, *ptr2;
+	BYTE *ptr;
 	BYTE filename[20];
 
-	BYTE bssIdx;
-	WORD_VAL bssIdxStr;
 	
 	INFO_BUTE  info_bute; 
 	// Load the file name

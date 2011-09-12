@@ -17,7 +17,7 @@ void NetworkInit(void)
 
 	// Initialize stack-related hardware components that may be 
 	// required by the UART configuration routines
-    TickInit();
+        TickInit();
 	#if defined(STACK_USE_MPFS) || defined(STACK_USE_MPFS2)
 		MPFSInit();
 	#endif

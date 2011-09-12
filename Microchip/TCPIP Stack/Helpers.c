@@ -877,7 +877,7 @@ void uitoa(WORD Value, BYTE* Buffer)
 // HI-TECH PICC-18 PRO 9.63 and C30 v3.25 already have a ultoa() library function
 // C18 already has a ultoa() function that more-or-less matches this one
 // C32 and C30 < v3.25 need this function
-#if defined(__PIC32MX__) || (defined (__C30__) && (__C30_VERSION__ < 325)) || defined(__C30_LEGACY_LIBC__)
+/*#if defined(__PIC32MX__) || (defined (__C30__) && (__C30_VERSION__ < 325)) || defined(__C30_LEGACY_LIBC__)
 void ultoa(DWORD Value, BYTE* Buffer)
 {
 	BYTE i;
@@ -906,7 +906,7 @@ void ultoa(DWORD Value, BYTE* Buffer)
 
 	*Buffer = '\0';
 }
-#endif
+#endif*/
 
 /*****************************************************************************
   Function:

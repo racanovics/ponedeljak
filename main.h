@@ -78,7 +78,7 @@
 	#define BROCHE_DIR_DIRECTION IOPORT_A, BIT_4  // La broche pour la "direction" de la direction
 	#define BROCHE_DIR_VITESSE   IOPORT_A, BIT_5  // La broche pour la "direction" de la vitesse
 	#define ISR_DELAY            1				  // Temps du toggle dans l'ISR d'acquisition
-	#define DEBUG_IS_ON          0				  // Ajout de code pour le debug (d�pendance : ISR Timer3 )
+	#define DEBUG_IS_ON          1				  // Ajout de code pour le debug (d�pendance : ISR Timer3 )
 	#define COMMANDE_DELAY       0				  // Temps de la tache d'asservissement
 	#define UART_DELAY           0				  // Temps de l'envoie via UART
 
@@ -92,7 +92,7 @@
 	/* App. User prototypes */
 	void HardwareInit(void);
 	void SoftwareInit(void);
-	void UARTputs(unsigned char *buffer);
+	void UARTputs(char *buffer);
 	void UARTputsIP(void);
 	short directionCommand(short consigne, short mesure);
 	short propulsionCommand (short ConsignePIF,float MesurePIF);

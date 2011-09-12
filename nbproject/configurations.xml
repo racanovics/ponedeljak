@@ -187,10 +187,10 @@
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC32MX795F512L</targetDevice>
         <targetHeader></targetHeader>
-        <platformTool>ICD3PlatformTool</platformTool>
+        <platformTool>RealICEPlatformTool</platformTool>
         <languageToolchain>C32</languageToolchain>
-        <languageToolchainVersion>1.11</languageToolchainVersion>
-        <platform>2</platform>
+        <languageToolchainVersion>2.01</languageToolchainVersion>
+        <platform>3</platform>
       </toolsSet>
       <compileType>
         <linkerTool>
@@ -199,9 +199,9 @@
         </linkerTool>
       </compileType>
       <C32>
-        <property key="extra-include-directories"
-                  value="FreeRTOS/Source/portable/MPLAB/PIC32MX;FreeRTOS/Source/include;.;Microchip/Include;Microchip/Include/TCPIP Stack;.;.;.;.;.;Hardware;.;"/>
         <property key="additional-warnings" value="true"/>
+        <property key="extra-include-directories"
+                  value="FreeRTOS/Source/portable/MPLAB/PIC32MX;FreeRTOS/Source/include;.;Microchip/Include;Microchip/Include/TCPIP Stack;.;.;.;.;.;Hardware;.;Z:\wifi-car\Hardware"/>
         <property key="preprocessor-macros" value="EXPLORER_16_MRF24WB0M"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="make-warnings-into-errors" value="false"/>
@@ -219,14 +219,14 @@
       </C32>
       <C32-AS>
         <property key="omit-debug-dirs" value="false"/>
-        <property key="extra-include-directories-for-assembler" value=".;"/>
+        <property key="extra-include-directories-for-assembler" value="."/>
         <property key="preprocessor-macros" value="EXPLORER_16_MRF24WB0M"/>
         <property key="exclude-floating-point-library" value="false"/>
         <property key="list-file" value=""/>
-        <property key="list-source" value="false"/>
         <property key="list-assembly" value="false"/>
+        <property key="list-source" value="false"/>
         <property key="extra-include-directories-for-preprocessor"
-                  value="FreeRTOS/Source/portable/MPLAB/PIC32MX;FreeRTOS/Source/include;.;Microchip/Include;Microchip/Include/TCPIP Stack;.;.;.;.;.;Hardware;.;"/>
+                  value="FreeRTOS/Source/portable/MPLAB/PIC32MX;FreeRTOS/Source/include;.;Microchip/Include;Microchip/Include/TCPIP Stack;.;.;.;.;.;Hardware;."/>
         <property key="warning-level" value=""/>
         <property key="list-section-info" value="false"/>
         <property key="omit-forms" value="false"/>
@@ -254,7 +254,7 @@
         <property key="input-libraries" value=""/>
         <property key="enable-check-sections" value="false"/>
         <property key="symbol-stripping" value=""/>
-        <property key="extra-lib-directories" value=".;"/>
+        <property key="extra-lib-directories" value="."/>
       </C32-LD>
       <C32Global>
         <property key="legacy-libc" value="false"/>

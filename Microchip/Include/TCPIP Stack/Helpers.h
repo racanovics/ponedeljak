@@ -60,7 +60,7 @@
 // Implement consistent ultoa() function
 #if defined(__PIC32MX__) || (defined (__C30__) && (__C30_VERSION__ < 325)) || defined(__C30_LEGACY_LIBC__)
 	// C32 and C30 < v3.25 need this 2 parameter stack implemented function
-	void ultoa(DWORD Value, BYTE* Buffer);
+	//void ultoa(DWORD Value, BYTE* Buffer);
 #elif defined(__18CXX) && !defined(HI_TECH_C)
 	// C18 already has a 2 parameter ultoa() function
 	#include <stdlib.h>

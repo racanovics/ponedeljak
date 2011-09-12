@@ -284,7 +284,7 @@ void vApplicationStackOverflowHook( xTaskHandle *pxTask, signed portCHAR *pcTask
 
 	for( ;; ){
 		UARTputs("SYSTEM ERROR : FreeRTOS Stack Overflow with Task ---->>>  \r");
-		UARTputs(pcTaskID);
+		UARTputs((char *)pcTaskID);
 		UARTputs("  !\r");
 	}
 }
@@ -307,7 +307,7 @@ int main(void){
 	HardwareInit();	
 
 	/* Configurations variables application */
-	SoftwareInit();		
+	SoftwareInit();
 
 	/* Configurations Real Time Operating System */		
 	RTOSInit();
