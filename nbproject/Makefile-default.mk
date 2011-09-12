@@ -40,7 +40,7 @@ ASFLAGS=
 LDLIBSOPTIONS=
 
 # Path to java used to run MPLAB X when this makefile was created
-MP_JAVA_PATH=/usr/lib/jvm/java-6-sun-1.6.0.26/jre/bin/
+MP_JAVA_PATH=C:\\Program\ Files\\Java\\jre6/bin/
 OS_CURRENT="$(shell uname -s)"
 ############# Tool locations ##########################################
 # If you copy a project from one host to another, the path where the  #
@@ -48,17 +48,17 @@ OS_CURRENT="$(shell uname -s)"
 # If you open this project with MPLAB X in the new host, this         #
 # makefile will be regenerated and the paths will be corrected.       #
 #######################################################################
-MP_CC=/opt/microchip/mplabc32/v1.11a/bin/pic32-gcc
+MP_CC=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin\\pic32-gcc.exe
 # MP_BC is not defined
-MP_AS=/opt/microchip/mplabc32/v1.11a/bin/pic32-as
-MP_LD=/opt/microchip/mplabc32/v1.11a/bin/pic32-ld
-MP_AR=/opt/microchip/mplabc32/v1.11a/bin/pic32-ar
+MP_AS=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin\\pic32-as.exe
+MP_LD=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin\\pic32-ld.exe
+MP_AR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin\\pic32-ar.exe
 # MP_BC is not defined
-MP_CC_DIR=/opt/microchip/mplabc32/v1.11a/bin
+MP_CC_DIR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin
 # MP_BC_DIR is not defined
-MP_AS_DIR=/opt/microchip/mplabc32/v1.11a/bin
-MP_LD_DIR=/opt/microchip/mplabc32/v1.11a/bin
-MP_AR_DIR=/opt/microchip/mplabc32/v1.11a/bin
+MP_AS_DIR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin
+MP_LD_DIR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin
+MP_AR_DIR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin
 # MP_BC_DIR is not defined
 
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -2494,7 +2494,7 @@ else
 dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} dist/${CND_CONF}/${IMAGE_TYPE} 
 	${MP_CC} $(MP_EXTRA_LD_PRE)  -mprocessor=$(MP_PROCESSOR_OPTION)  -o dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf ${OBJECTFILES}        -Wl,--defsym=__MPLAB_BUILD=1,--report-mem$(MP_EXTRA_LD_POST)$(MP_LINKER_FILE_OPTION),-L".",-Map="${DISTDIR}/wifi-cat.${IMAGE_TYPE}.map"
-	${MP_CC_DIR}/pic32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf  
+	${MP_CC_DIR}\\pic32-bin2hex dist/${CND_CONF}/${IMAGE_TYPE}/wifi-car.${IMAGE_TYPE}.elf  
 endif
 
 
