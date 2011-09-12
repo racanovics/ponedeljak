@@ -48,17 +48,17 @@ OS_CURRENT="$(shell uname -s)"
 # If you open this project with MPLAB X in the new host, this         #
 # makefile will be regenerated and the paths will be corrected.       #
 #######################################################################
-MP_CC=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin\\pic32-gcc.exe
+MP_CC=c:\\program\ files\\microchip\\mplab\ c32\\bin\\pic32-gcc.exe
 # MP_BC is not defined
-MP_AS=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin\\pic32-as.exe
-MP_LD=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin\\pic32-ld.exe
-MP_AR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin\\pic32-ar.exe
+MP_AS=c:\\program\ files\\microchip\\mplab\ c32\\bin\\pic32-as.exe
+MP_LD=c:\\program\ files\\microchip\\mplab\ c32\\bin\\pic32-ld.exe
+MP_AR=c:\\program\ files\\microchip\\mplab\ c32\\bin\\pic32-ar.exe
 # MP_BC is not defined
-MP_CC_DIR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin
+MP_CC_DIR=c:\\program\ files\\microchip\\mplab\ c32\\bin
 # MP_BC_DIR is not defined
-MP_AS_DIR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin
-MP_LD_DIR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin
-MP_AR_DIR=C:\\Program\ Files\\Microchip\\MPLAB\ C32\\bin
+MP_AS_DIR=c:\\program\ files\\microchip\\mplab\ c32\\bin
+MP_LD_DIR=c:\\program\ files\\microchip\\mplab\ c32\\bin
+MP_AR_DIR=c:\\program\ files\\microchip\\mplab\ c32\\bin
 # MP_BC_DIR is not defined
 
 .build-conf: ${BUILD_SUBPROJECTS}
