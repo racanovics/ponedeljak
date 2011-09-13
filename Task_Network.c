@@ -37,7 +37,12 @@ BOOL	IPmodifBOOL = TRUE;
         if(xTaskGetTickCount() - secondCount >= configTICK_RATE_HZ){
 
             secondCount = xTaskGetTickCount();
-            LED0_IO ^= 1;
+#ifdef DEV_CARD
+            PORTToggleBits(IOPORT_A,BIT_0);
+#endif
+#ifdef PROD_CARD
+            //PORTToggleBits(IOPORT_E,BIT_0);
+#endif
         }
 
         // This task performs normal stack task including checking

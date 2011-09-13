@@ -345,6 +345,8 @@
 // same PMP lines required to communicate with an ENCX24J600 in parallel 
 // mode.  Since the LCD does not have a chip select wire, if you are using 
 // the ENC424J600/624J600 in parallel mode, the LCD cannot be used.
+#ifdef DEV_CARD
+
 #if !defined(ENC100_INTERFACE_MODE) || (ENC100_INTERFACE_MODE == 0)	// SPI only
 	#define LCD_DATA_TRIS		(*((volatile unsigned char*)&TRISE))
 	#define LCD_DATA_IO			(*((volatile unsigned char*)&LATE))
@@ -356,7 +358,7 @@
 	#define LCD_E_IO			(LATDbits.LATD4)
 #endif
 
-
+#endif
 //// Serial Flash/SRAM/UART PICtail Plus attached to SPI2 (middle pin group)
 //// This daughter card is not in production, but if you custom attach an SPI 
 //// RAM or SPI Flash chip to your board, then use these definitions as a 
@@ -514,7 +516,7 @@
 	#define WF_SPI_IF_CLEAR		IFS0CLR
 	#define WF_SPI_INT_BITS		0x03800000
 	#define WF_SPI_BRG			(SPI1BRG)
-	#define WF_MAX_SPI_FREQ		(10000000ul)	// Hz
+	#define WF_MAX_SPI_FREQ		(1000000ul)	// Hz
 #elif defined(MRF24WB0M_IN_SPI2) && (defined(__32MX460F512L__) || defined(__32MX795F512L__))
 	#error "/RST and /CE are on RG2 and RG3 which are multiplexed with USB D+ and D-."
 #endif

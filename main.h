@@ -81,7 +81,8 @@
 	#define DEBUG_IS_ON          1				  // Ajout de code pour le debug (d�pendance : ISR Timer3 )
 	#define COMMANDE_DELAY       0				  // Temps de la tache d'asservissement
 	#define UART_DELAY           0				  // Temps de l'envoie via UART
-
+        #define PROD_CARD            0                // Configuration des LEDS pour la carte de prod
+        #define DEV_CARD             1
 	/* Wi-Fi */
 	#define WF_MODULE_NUMBER     WF_MODULE_MAIN_DEMO		// Used for Wi-Fi assertions
 

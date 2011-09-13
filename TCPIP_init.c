@@ -203,17 +203,6 @@ void DisplayIPValue(IP_ADDR IPVal)
   ***************************************************************************/
 void InitializeBoard(void)
 {	
-	// LEDs
-	LED0_TRIS = 0;
-	LED1_TRIS = 0;
-	LED2_TRIS = 0;
-	LED3_TRIS = 0;
-	LED4_TRIS = 0;
-	LED5_TRIS = 0;
-	LED6_TRIS = 0;
-	LED7_TRIS = 0;
-	LED_PUT(0x00);
-
 	#if defined(__PIC32MX__)
 	{
 		// Enable multi-vectored interrupts

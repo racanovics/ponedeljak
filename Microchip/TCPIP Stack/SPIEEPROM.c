@@ -89,7 +89,7 @@
 #define OPCODE_RDSR    0x05    // Read Status register
 #define OPCODE_WRSR    0x01    // Write Status register
 
-#define EEPROM_MAX_SPI_FREQ     (10000000ul)    // Hz
+#define EEPROM_MAX_SPI_FREQ     (1000000ul)    // Hz
 
 #if defined (__18CXX)
     #define ClearSPIDoneFlag()  {EEPROM_SPI_IF = 0;}
@@ -147,7 +147,7 @@ static BYTE vBytesInBuffer;
     #define PROPER_SPICON1  (0x0003 | 0x0120)   /* 1:1 primary prescale, 8:1 secondary prescale, CKE=1, MASTER mode */
 #elif defined(__PIC32MX__)
 // Fix for new C32 release
-    #define PROPER_SPICON1  (_SPI2CON_ON_MASK | _SPI2CON_CKE_MASK | _SPI2CON_MSTEN_MASK)
+    #define PROPER_SPICON1  (_SPI2CON_ON_MASK  |_SPI2CON_CKE_MASK | _SPI2CON_MSTEN_MASK)
 #else
     #define PROPER_SPICON1  (0x21)      /* SSPEN bit is set, SPI in master mode, FOSC/16, IDLE state is low level */
 #endif

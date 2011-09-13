@@ -112,13 +112,21 @@ void HardwareInit(void){
 
 /*** GPI/O Configuration ***/			
 
-			/* Configuration - broches RA4, RA5, RA7 en sortie TOR */	
-			PORTClearBits(IOPORT_A, BIT_7 | BIT_4 | BIT_5);
- 			PORTSetPinsDigitalOut(IOPORT_A, BIT_7 | BIT_4 | BIT_5);
+#ifdef PROD_CARD
+                        //PORTClearBits(IOPORT_E, BIT_3 | BIT_2 | BIT_1 | BIT_0);
+ 			//PORTSetPinsDigitalOut(IOPORT_E, BIT_3 | BIT_2 | BIT_1 | BIT_0);
+#endif
+#ifdef DEV_CARD
+                        /* Configuration - broches RA0, RA4, RA5, RA7 en sortie TOR */
+			PORTClearBits(IOPORT_A, BIT_7 | BIT_4 | BIT_5 | BIT_0);
+ 			PORTSetPinsDigitalOut(IOPORT_A, BIT_7 | BIT_4 | BIT_5 | BIT_0);
+#endif
+
+			
 #ifdef CMUcam_IS_USE
                         /* Configuration - broches RD0, RD1, RD2 en sortie TOR */
-                        mPORTDClearBits(BIT_0 | BIT_1 | BIT_2);
-                        mPORTDSetPinsDigitalOut(BIT_0 | BIT_1 | BIT_2 );
+                        PORTClearBits(IOPORT_D,BIT_0 | BIT_1 | BIT_2);
+                        PORTSetPinsDigitalOut(IOPORT_D,BIT_0 | BIT_1 | BIT_2 );
 #endif
 /*** TIMER Configuration ***/	
 
