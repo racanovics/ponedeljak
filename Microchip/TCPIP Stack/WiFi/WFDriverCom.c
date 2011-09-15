@@ -511,7 +511,7 @@ static void ChipReset(void)
         {
             WF_ASSERT(FALSE);
         }   
-    } while ( (value & WF_HW_STATUS_NOT_IN_RESET_MASK) == 0);
+     } while ( (value & WF_HW_STATUS_NOT_IN_RESET_MASK) == 0);
 
     
     /* if SPI not connected will read all 1's */

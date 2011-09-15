@@ -89,7 +89,7 @@
 #define OPCODE_RDSR    0x05    // Read Status register
 #define OPCODE_WRSR    0x01    // Write Status register
 
-#define EEPROM_MAX_SPI_FREQ     (1000000ul)    // Hz
+#define EEPROM_MAX_SPI_FREQ     (10000000ul)    // Hz
 
 #if defined (__18CXX)
     #define ClearSPIDoneFlag()  {EEPROM_SPI_IF = 0;}

@@ -37,11 +37,11 @@ BOOL	IPmodifBOOL = TRUE;
         if(xTaskGetTickCount() - secondCount >= configTICK_RATE_HZ){
 
             secondCount = xTaskGetTickCount();
-#ifdef DEV_CARD
+#if DEV_CARD
             PORTToggleBits(IOPORT_A,BIT_0);
 #endif
-#ifdef PROD_CARD
-            //PORTToggleBits(IOPORT_E,BIT_0);
+#if PROD_CARD
+            PORTToggleBits(IOPORT_E,BIT_0);
 #endif
         }
 

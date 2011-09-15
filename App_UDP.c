@@ -77,10 +77,17 @@ void UDPServer_request(void)
 			// Receive the command
 			size = UDPGetArray((BYTE *)i,MAX_COMMAND_SIZE);
                         // Alloc command variable
+                        
+                        /*
+                         * (!!! You must allocate an heap space on C32 linker option !!!)
+                         */
+
                         command = (BYTE *)malloc(size*sizeof(BYTE));
                         // Define command variable
                         strncpy(command,i,size);
+                        free(command);
                         // Send command to CMUcam
+                            
                         putsUART1(command);
 
                         xSemaphoreTake(xSemaphoreTX,portMAX_DELAY);
@@ -104,6 +111,7 @@ void UDPServer_request(void)
                             // We need to split the data, because of UDP packet size limit
                             Large_UDP_Packet(count,MySocket);
                         }
+                         
                         xSemaphoreGive(xSemaphoreTX);
 			UDPRequestSM = UDP_REQUEST_LISTEN;
                         EnableIntU1RX;

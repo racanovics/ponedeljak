@@ -55,7 +55,7 @@
 	#define MAX_CURRENT                14.0			// La valeur max admissible pour l'asservissement de courant
         #define RX_MAX                     11000
         #define UDP_LIMIT_SIZE             1472
-	#define DESIRED_BAUDRATE_CMUCAM    (57600)
+	#define DESIRED_BAUDRATE_CMUCAM    (115200)
         #define MAX_COMMAND_SIZE           20
 
 	/* TCP-IP */
@@ -77,17 +77,17 @@
 	#define BROCHE_DEBUG         IOPORT_A, BIT_7  // La broche pour les sorties de Debug
 	#define BROCHE_DIR_DIRECTION IOPORT_A, BIT_4  // La broche pour la "direction" de la direction
 	#define BROCHE_DIR_VITESSE   IOPORT_A, BIT_5  // La broche pour la "direction" de la vitesse
-	#define ISR_DELAY            1				  // Temps du toggle dans l'ISR d'acquisition
-	#define DEBUG_IS_ON          1				  // Ajout de code pour le debug (d�pendance : ISR Timer3 )
+	#define ISR_DELAY            1                // Temps du toggle dans l'ISR d'acquisition
+	#define DEBUG_IS_ON          1                  // Ajout de code pour le debug (d�pendance : ISR Timer3 )
 	#define COMMANDE_DELAY       0				  // Temps de la tache d'asservissement
 	#define UART_DELAY           0				  // Temps de l'envoie via UART
-        #define PROD_CARD            0                // Configuration des LEDS pour la carte de prod
-        #define DEV_CARD             1
+        #define PROD_CARD            1                              // Configuration des LEDS pour la carte de prod
+        #define DEV_CARD             0
 	/* Wi-Fi */
 	#define WF_MODULE_NUMBER     WF_MODULE_MAIN_DEMO		// Used for Wi-Fi assertions
 
         /* CMUcam */
-        #define CMUcam_IS_USE        0                 // Pour activer la communication vers la CMUcam
+        #define CMUcam_IS_USE        1                 // Pour activer la communication vers la CMUcam
 /** FUNCTIONS and TASKS *********************************************/
 
 	/* App. User prototypes */

@@ -40,18 +40,18 @@ void HardwareInit(void){
 			/* Contrôle - Démarrage de l'UART3A et validation des broches Rx et Tx */
 			UARTEnable(UART3A, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
 #if CMUcam_IS_USE
-                        /* Configuration - UART1A (Communication CMUcam)		*/
+                        /* Configuration - UART1 (Communication CMUcam)		*/
 			/* Broches Tx et RX uniquement, 8bits de données, pas de bit de parité,		*/
 			/* 1 bit de stop, débit  9600Bauds, aucune gestion de la FIFO (default mode)*/
-                        UARTConfigure(UART1A, UART_ENABLE_PINS_TX_RX_ONLY);
-			UARTSetLineControl(UART1A, UART_DATA_SIZE_8_BITS | UART_PARITY_NONE | UART_STOP_BITS_1);
-  			UARTSetDataRate(UART1A, GetPeripheralClock(), DESIRED_BAUDRATE_CMUCAM); // Le system performance est fait de le Network Init
+                        UARTConfigure(UART1, UART_ENABLE_PINS_TX_RX_ONLY);
+			UARTSetLineControl(UART1, UART_DATA_SIZE_8_BITS | UART_PARITY_NONE | UART_STOP_BITS_1);
+  			UARTSetDataRate(UART1, GetPeripheralClock(), DESIRED_BAUDRATE_CMUCAM); // Le system performance est fait de le Network Init
 
 			/* Interrupt Configuration - démasquage IT propres à l'utilisation de l'UART1 */
-			INTClearFlag(INT_U1ARX);
-			INTSetVectorPriority(INT_UART_1A_VECTOR,INT_PRIORITY_LEVEL_2);
-			INTSetVectorSubPriority(INT_UART_1A_VECTOR,INT_SUB_PRIORITY_LEVEL_0);
-			INTEnable(INT_SOURCE_UART_RX(UART1A),INT_ENABLED);
+			INTClearFlag(INT_U1RX);
+			INTSetVectorPriority(INT_UART_1_VECTOR,INT_PRIORITY_LEVEL_2);
+			INTSetVectorSubPriority(INT_UART_1_VECTOR,INT_SUB_PRIORITY_LEVEL_0);
+			INTEnable(INT_SOURCE_UART_RX(UART1),INT_ENABLED);
 
 			/* Contrôle - Démarrage de l'UART1 et validation des broches Rx et Tx */
 			UARTEnable(UART1, UART_ENABLE_FLAGS(UART_PERIPHERAL | UART_RX | UART_TX));
@@ -112,22 +112,17 @@ void HardwareInit(void){
 
 /*** GPI/O Configuration ***/			
 
-#ifdef PROD_CARD
-                        //PORTClearBits(IOPORT_E, BIT_3 | BIT_2 | BIT_1 | BIT_0);
- 			//PORTSetPinsDigitalOut(IOPORT_E, BIT_3 | BIT_2 | BIT_1 | BIT_0);
+#if PROD_CARD
+                        PORTClearBits(IOPORT_E, BIT_3 | BIT_2 | BIT_1 | BIT_0);
+ 			PORTSetPinsDigitalOut(IOPORT_E, BIT_3 | BIT_2 | BIT_1 | BIT_0);
 #endif
-#ifdef DEV_CARD
+#if DEV_CARD
                         /* Configuration - broches RA0, RA4, RA5, RA7 en sortie TOR */
 			PORTClearBits(IOPORT_A, BIT_7 | BIT_4 | BIT_5 | BIT_0);
  			PORTSetPinsDigitalOut(IOPORT_A, BIT_7 | BIT_4 | BIT_5 | BIT_0);
 #endif
 
-			
-#ifdef CMUcam_IS_USE
-                        /* Configuration - broches RD0, RD1, RD2 en sortie TOR */
-                        PORTClearBits(IOPORT_D,BIT_0 | BIT_1 | BIT_2);
-                        PORTSetPinsDigitalOut(IOPORT_D,BIT_0 | BIT_1 | BIT_2 );
-#endif
+		
 /*** TIMER Configuration ***/	
 
 			/* Configuration - Timer 3 pour la partie acquisition, commande, supervision de l'application */

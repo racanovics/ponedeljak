@@ -516,7 +516,7 @@
 	#define WF_SPI_IF_CLEAR		IFS0CLR
 	#define WF_SPI_INT_BITS		0x03800000
 	#define WF_SPI_BRG			(SPI1BRG)
-	#define WF_MAX_SPI_FREQ		(1000000ul)	// Hz
+	#define WF_MAX_SPI_FREQ		(10000000ul)	// Hz
 #elif defined(MRF24WB0M_IN_SPI2) && (defined(__32MX460F512L__) || defined(__32MX795F512L__))
 	#error "/RST and /CE are on RG2 and RG3 which are multiplexed with USB D+ and D-."
 #endif
