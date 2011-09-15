@@ -92,10 +92,9 @@ void UDPServer_request(void)
 
                         xSemaphoreTake(xSemaphoreTX,portMAX_DELAY);
                         UDPDiscard();
-			// Pass to reply case :
-			UDPRequestSM++;
+
                         // No break, we must continue without re-loop
-                        //break;
+                       
 			// Change the destination to the unicast address of the last received packet
                         memcpy((void*)&UDPSocketInfo[MySocket].remoteNode, (const void*)&remoteNode, sizeof(remoteNode));
 
@@ -111,9 +110,12 @@ void UDPServer_request(void)
                             // We need to split the data, because of UDP packet size limit
                             Large_UDP_Packet(count,MySocket);
                         }
-                         
+                        // Just if we cannot detect the end of frame
+                        count = 0;
                         xSemaphoreGive(xSemaphoreTX);
-			UDPRequestSM = UDP_REQUEST_LISTEN;
+			/* Not useful here (No break before and no ++ on the SM)
+                         * Just to be clear */
+                        UDPRequestSM = UDP_REQUEST_LISTEN;
                         EnableIntU1RX;
                         break;
 

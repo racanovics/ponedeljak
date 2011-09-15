@@ -112,7 +112,8 @@
 	void TaskControl(void *pvParameters);
 	void TaskNetwork( void *pvParameters );
 	void TaskRefreshHTTP(void *pvParameters);
-	
+	void TaskCMUcam(void *pvParameters);
+        
 	/* TCP-IP prototypes */
 	void InitAppConfig(void);
 	void InitializeBoard(void);
@@ -147,7 +148,8 @@
 	xQueueHandle xQueueAcquiData;
 	xQueueHandle xQueueDebugPrint;
 	xQueueHandle xQueueDebugPrintIP;
-        
+        xQueueHandle xQueueCMUcam;
+
         xSemaphoreHandle xSemaphoreVitesse;
 	xSemaphoreHandle xSemaphoreConsDir;
 	xSemaphoreHandle xSemaphoreTX;
