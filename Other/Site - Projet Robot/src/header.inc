@@ -17,8 +17,7 @@
 
 <div id="menu">
 <a href="/index.htm">Information</a>
-<a href="/initialisation.html">Initialisation</a>
-<a href="/controle.html">Controle</a>
+<a href="/initialisation.html">Configuration</a>
 <a href="/upload.htm">Mise a jour</a>
 <a href="/eeprom.htm">EEprom</a>
 </div>

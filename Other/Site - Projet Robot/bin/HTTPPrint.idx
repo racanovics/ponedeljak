@@ -1,10 +1,10 @@
 +inc:header.inc
 +inc:footer.inc
-+vitesse_pwm
+vitesse_pwm
 sens
 direction
-+direction_pwm
-+avant_arriere
+direction_pwm
+avant_arriere
 +zero_bute
 +haut_bute
 +bas_bute

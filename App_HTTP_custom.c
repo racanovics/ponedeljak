@@ -109,7 +109,7 @@ char etat_save_info = 0;
   ***************************************************************************/
 HTTP_IO_RESULT HTTPExecuteGet(void)
 {
-	BYTE *ptr;
+	BYTE *ptr,*ptr2,*ptr3;
 	BYTE filename[20];
 
 	
@@ -118,74 +118,17 @@ HTTP_IO_RESULT HTTPExecuteGet(void)
 	// Make sure BYTE filename[] above is large enough for your longest name
 	MPFSGetFilename(curHTTP.file, filename, 20);
 	
-	// If its the vitesse.cgi page
-
-	if(!memcmppgm2ram(filename, "vitesse.cgi", 11))
+	
+	if(!memcmppgm2ram(filename, "initialisation.html", 19))
 	{
-		// Determine which LED to toggle
-		ptr = HTTPGetROMArg(curHTTP.data, (ROM BYTE *)"vitesse");
-		
-		// Toggle the specified LED
-		switch(*ptr) {
-			case '1':
-				Change_Vitesse_up = 1;
-				break;
-			case '2':
-				Change_Vitesse_down = 1;
-				break;
-			case '3':
-				Change_Vitesse_up = 0;
-				break;
-			case '4':
-				Change_Vitesse_down = 0;
-				break;
-		}
-	}
-	else if(!memcmppgm2ram(filename, "direction.cgi", 13))
-	{
-		// Determine which LED to toggle
-		ptr = HTTPGetROMArg(curHTTP.data, (ROM BYTE *)"direction");
-		
-		// Toggle the specified LED
-		switch(*ptr) {
-			case '1':
-				Change_Direction_up = 1;
-				break;
-			case '2':
-				Change_Direction_down = 1;
-				break;
-			case '3':
-				Change_Direction_up = 0;
-				break;
-			case '4':
-				Change_Direction_down = 0;
-				break;
-		}
-	}
-	else if(!memcmppgm2ram(filename, "sens.cgi", 8))
-	{
-		// Determine which LED to toggle
-		ptr = HTTPGetROMArg(curHTTP.data, (ROM BYTE *)"sens");
-		
-		// Toggle the specified LED
-		switch(*ptr) {
-			case '1':
-				Marche_Avant_Arriere = 1;
-				break;
-			case '2':
-				Marche_Avant_Arriere = 2;
-				break;
-			case '3':
-				Marche_Avant_Arriere = 0;
-				break;
-		}
-	}
-	else if(!memcmppgm2ram(filename, "initialisation.html", 19))
-	{
-		// Determine which LED to toggle
-		ptr = HTTPGetROMArg(curHTTP.data, (ROM BYTE *)"save_value");
-		// Toggle the specified LED
-		switch(*ptr) {
+            // TODO : Fix that
+		// Determine which "BUTEE" was choose
+		ptr = HTTPGetArg(curHTTP.data, (BYTE *)"save_value");
+                ptr2 = HTTPGetArg(curHTTP.data, (BYTE *)"incdir");
+                ptr3 = HTTPGetArg(curHTTP.data, (BYTE *)"incvit");
+                if (ptr)
+                {
+                    switch(*ptr) {
 			case '2':
 				ZERO_BUTE = resultat;
 				ConsDir   = ZERO_BUTE; // On initialise la consigne au "centre"
@@ -197,7 +140,81 @@ HTTP_IO_RESULT HTTPExecuteGet(void)
 			case '0':
 				BAS_BUTE = resultat;
 				break;
-		}
+                    }
+                }
+                else if(ptr2)
+                {
+                    switch(*ptr2){
+                        case '9' :
+                                increment_direction = 9;
+                                break;
+                        case '8' :
+                                increment_direction = 8;
+                                break;
+                        case '7' :
+                                increment_direction = 7;
+                                break;
+                        case '6' :
+                                increment_direction = 6;
+                                break;
+                        case '5' :
+                                increment_direction = 5;
+                                break;
+                        case '4' :
+                                increment_direction = 4;
+                                break;
+                        case '3' :
+                                increment_direction = 3;
+                                break;
+                        case '2' :
+                                increment_direction = 2;
+                                break;
+                        case '1' :
+                                increment_direction = 1;
+                                break;
+                        case '0' :
+                                increment_direction = 0;
+                                break;
+                    }
+                    
+                }
+                else if(ptr3)
+                {
+                    switch(*ptr3){
+                        case '9' :
+                                increment_vitesse = 9;
+                                break;
+                        case '8' :
+                                increment_vitesse = 8;
+                                break;
+                        case '7' :
+                                increment_vitesse = 7;
+                                break;
+                        case '6' :
+                                increment_vitesse = 6;
+                                break;
+                        case '5' :
+                                increment_vitesse = 5;
+                                break;
+                        case '4' :
+                                increment_vitesse = 4;
+                                break;
+                        case '3' :
+                                increment_vitesse = 3;
+                                break;
+                        case '2' :
+                                increment_vitesse = 2;
+                                break;
+                        case '1' :
+                                increment_vitesse = 1;
+                                break;
+                        case '0' :
+                                increment_vitesse = 0;
+                                break;
+                    }
+                }
+		// Toggle the specified LED
+		
 	}
 	else if(!memcmppgm2ram(filename, "eeprom.htm", 10))
 	{
@@ -268,30 +285,7 @@ HTTP_IO_RESULT HTTPExecutePost(void)
   Internal:
   	See documentation in the TCP/IP Stack API or HTTP2.h for details.
   ***************************************************************************/
-void HTTPPrint_vitesse_pwm(void)
-{
-	char buffer[5];
-	xSemaphoreTake(xSemaphoreVitesse,portMAX_DELAY);
-	sprintf(buffer,"%d",Vitesse);
-	xSemaphoreGive(xSemaphoreVitesse);
-	TCPPutROMString(sktHTTP,(ROM BYTE*)buffer);
-}
 
-// Marche avant - Marche arrière
-void HTTPPrint_avant_arriere(void)
-{
-	char buffer[10];
-	sprintf(buffer,"%d",Marche_Avant_Arriere); 
-	TCPPutROMString(sktHTTP,(ROM BYTE*)buffer);
-}
-
-// Commande de la direction
-void HTTPPrint_direction_pwm(void)
-{	
-	char buffer[5];
-	sprintf(buffer,"%d",ConsDir);
-	TCPPutROMString(sktHTTP,(ROM BYTE*)buffer);
-}
 
 void HTTPPrint_zero_bute(void)
 {

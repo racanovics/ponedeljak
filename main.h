@@ -57,11 +57,13 @@
         #define UDP_LIMIT_SIZE             1472
 	#define DESIRED_BAUDRATE_CMUCAM    (115200)
         #define MAX_COMMAND_SIZE           20
-
+        #define FORWARD                    1
+        #define BACKWARD                   2
 	/* TCP-IP */
-	#define NETWORK_DATA_REFRESH_PERIOD		3	// p�riode de rafrachissement des data r�seau en nb de tick du noyau
+	#define NETWORK_DATA_REFRESH_PERIOD	3	// p�riode de rafrachissement des data r�seau en nb de tick du noyau
 	#define NETWORK_STACK_REFRESH_PERIOD	10	// p�riode de rafrachissement de la stack IP en nb de tick du noyau
-
+        #define SERVER_PORT_CMUCAM              9760
+        #define SERVER_PORT_CMD                 9761
 	/* Command/control */
 	#define PROPULSION_CONTROL  	1
 	#define PROPULSION_PWM  		2
@@ -75,54 +77,20 @@
 
 	/* Debug */
 	#define BROCHE_DEBUG         IOPORT_A, BIT_7  // La broche pour les sorties de Debug
-	#define BROCHE_DIR_DIRECTION IOPORT_A, BIT_4  // La broche pour la "direction" de la direction
-	#define BROCHE_DIR_VITESSE   IOPORT_A, BIT_5  // La broche pour la "direction" de la vitesse
+	#define BROCHE_DIR_DIRECTION IOPORT_A, BIT_5  // La broche pour la "direction" de la direction
+	#define BROCHE_DIR_VITESSE   IOPORT_A, BIT_4  // La broche pour la "direction" de la vitesse
 	#define ISR_DELAY            1                // Temps du toggle dans l'ISR d'acquisition
 	#define DEBUG_IS_ON          1                  // Ajout de code pour le debug (d�pendance : ISR Timer3 )
 	#define COMMANDE_DELAY       0				  // Temps de la tache d'asservissement
 	#define UART_DELAY           0				  // Temps de l'envoie via UART
-        #define PROD_CARD            1                              // Configuration des LEDS pour la carte de prod
-        #define DEV_CARD             0
+        #define PROD_CARD            0                              // Configuration des LEDS pour la carte de prod
+        #define DEV_CARD             1
 	/* Wi-Fi */
 	#define WF_MODULE_NUMBER     WF_MODULE_MAIN_DEMO		// Used for Wi-Fi assertions
 
         /* CMUcam */
         #define CMUcam_IS_USE        1                 // Pour activer la communication vers la CMUcam
-/** FUNCTIONS and TASKS *********************************************/
 
-	/* App. User prototypes */
-	void HardwareInit(void);
-	void SoftwareInit(void);
-	void UARTputs(char *buffer);
-	void UARTputsIP(void);
-	short directionCommand(short consigne, short mesure);
-	short propulsionCommand (short ConsignePIF,float MesurePIF);
-        void putrsUART2(unsigned char * String);
-
-	/* RTOS prototypes */
-	void RTOSInit(void);
-	void NetworkInit(void); 
-
-        /* Network prototypes*/
-        void UDPServer_request(void);
-        void Large_UDP_Packet(int value,UDP_SOCKET MySocket);
-
-	/* Task prototypes */
-	void TaskDebugUart(void *pvParameters);
-	void TaskControl(void *pvParameters);
-	void TaskNetwork( void *pvParameters );
-	void TaskRefreshHTTP(void *pvParameters);
-	void TaskCMUcam(void *pvParameters);
-        
-	/* TCP-IP prototypes */
-	void InitAppConfig(void);
-	void InitializeBoard(void);
-	void WF_Connect(void);
-
-	/* Modification (http://www.microchip.com/forums/tm.aspx?m=526126&mpage=&settheme=Mobile)
-	Permet de stocker des variables dans l'EEPROM (En tenant compte du MPFS) */
-	extern void ReadAuxVar(BYTE n, BYTE *var, BYTE size);  
-	extern void SaveAuxVar(BYTE n, BYTE *var, BYTE size);  
 	
 /** VARIABLES *********************************************/
 
@@ -142,6 +110,9 @@
 	char  init_ok;				 // Le bas de la bute
 	char  increment_direction;
 	char  increment_vitesse;
+
+
+
 	WORD  MemoryIndexVar[4]; 	// L'index pour les variables	
 					 
 	/* RTOS prototypes */
@@ -149,7 +120,7 @@
 	xQueueHandle xQueueDebugPrint;
 	xQueueHandle xQueueDebugPrintIP;
         xQueueHandle xQueueCMUcam;
-
+        
         xSemaphoreHandle xSemaphoreVitesse;
 	xSemaphoreHandle xSemaphoreConsDir;
 	xSemaphoreHandle xSemaphoreTX;
@@ -194,6 +165,52 @@
 	    short zero;
 	    short haut;
 		short bas;
-	 } INFO_BUTE ;	
-	
+	 } INFO_BUTE ;
+
+        /* Sauvegarde des bornes pour l'asservissement de position*/
+	 typedef struct cmd_car {
+            char for_back;
+            char speed_up;
+            char speed_down;
+            char dir_up;
+            char dir_down;
+	 } CMD_CAR ;
+	        
+/** FUNCTIONS and TASKS *********************************************/
+
+	/* App. User prototypes */
+	void HardwareInit(void);
+	void SoftwareInit(void);
+	void UARTputs(char *buffer);
+	void UARTputsIP(void);
+	short directionCommand(short consigne, short mesure);
+	short propulsionCommand (short ConsignePIF,float MesurePIF);
+        void putrsUART2(unsigned char * String);
+
+	/* RTOS prototypes */
+	void RTOSInit(void);
+	void NetworkInit(void);
+
+        /* Network prototypes*/
+        void UDPServer_CMUcam(void);
+        void UDPServer_Cmd(void);
+        void Large_UDP_Packet(int value,UDP_SOCKET MySocket);
+        void Update_CMD(CMD_CAR car_info);
+
+	/* Task prototypes */
+	void TaskDebugUart(void *pvParameters);
+	void TaskControl(void *pvParameters);
+	void TaskNetwork( void *pvParameters );
+	//void TaskRefresh(void *pvParameters);
+	void TaskCMUcam(void *pvParameters);
+
+	/* TCP-IP prototypes */
+	void InitAppConfig(void);
+	void InitializeBoard(void);
+	void WF_Connect(void);
+
+	/* Modification (http://www.microchip.com/forums/tm.aspx?m=526126&mpage=&settheme=Mobile)
+	Permet de stocker des variables dans l'EEPROM (En tenant compte du MPFS) */
+	extern void ReadAuxVar(BYTE n, BYTE *var, BYTE size);
+	extern void SaveAuxVar(BYTE n, BYTE *var, BYTE size);  
 #endif

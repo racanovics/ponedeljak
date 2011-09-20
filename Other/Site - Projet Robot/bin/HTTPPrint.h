@@ -18,9 +18,6 @@ extern HTTP_STUB httpStubs[MAX_HTTP_CONNECTIONS];
 extern BYTE curHTTPID;
 
 void HTTPPrint(DWORD callbackID);
-void HTTPPrint_vitesse_pwm(void);
-void HTTPPrint_direction_pwm(void);
-void HTTPPrint_avant_arriere(void);
 void HTTPPrint_zero_bute(void);
 void HTTPPrint_haut_bute(void);
 void HTTPPrint_bas_bute(void);
@@ -38,15 +35,6 @@ void HTTPPrint(DWORD callbackID)
 			break;
         case 0x00000001:
 			HTTPIncFile((ROM BYTE*)"footer.inc");
-			break;
-        case 0x00000002:
-			HTTPPrint_vitesse_pwm();
-			break;
-        case 0x00000005:
-			HTTPPrint_direction_pwm();
-			break;
-        case 0x00000006:
-			HTTPPrint_avant_arriere();
 			break;
         case 0x00000007:
 			HTTPPrint_zero_bute();

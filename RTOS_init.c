@@ -27,24 +27,25 @@ void RTOSInit(void){
 	xQueueDebugPrint = xQueueCreate(1, sizeof(struct_DebugPrint)); 	// Post de grandeurs intémerdiaires pour le debug vers la tâche d'affichage
 	xQueueDebugPrintIP = xQueueCreate(1, sizeof(BOOL)); 		// Post de la nouvelle IP en cas de changement
         xQueueCMUcam = xQueueCreate(10, sizeof(char));                  // Post des data venant de la CMUcam
-        
-/*** SEMAPHORE Create ***/	
+
+        /*** SEMAPHORE Create ***/
+
+
 	vSemaphoreCreateBinary(xSemaphoreVitesse); 			// Protection variable globale vitesse
 	vSemaphoreCreateBinary(xSemaphoreConsDir); 			// Protection variable globale de consigne de direction "consDir"
         vSemaphoreCreateBinary(xSemaphoreTX);
 
 /*** TASK Create ***/
 	
-	/* Task Scheduling Priority :	*/	
+	/* Task Scheduling Priority :           */
 	/* Task Command 		-> 3	*/	
 	/* Task Debug 			-> 0	*/
 	/* Task Network 		-> 2	*/
         /* Task CMUcam 			-> 1	*/
-	/* Task HTTP Interface          -> 1	*/
+        
 	xTaskCreate(TaskControl, "Task Control", configASSERVISSEMENT_STACK_SIZE, NULL, tskIDLE_PRIORITY + 3, NULL);
 	xTaskCreate(TaskDebugUart, "Task Debug", configAFFICHAGE_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 	xTaskCreate(TaskNetwork, "Task Network", configRESEAU_STACK_SIZE, NULL, tskIDLE_PRIORITY + 2, NULL);
-	xTaskCreate(TaskRefreshHTTP, "Task HTTP Interface", configINTERFACE_HTTP_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
 	xTaskCreate(TaskCMUcam, "Task CMUcam", configCMUcam_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL);
 
 }

@@ -14,16 +14,13 @@
 #include "main.h"
 
 
-
-// Defines which port the server will listen on
-#define SERVER_PORT	9760
 extern NODE_INFO remoteNode;
 
 /*****************************************************************************
   Function:
-	void UDPServer_request(void)
+	void UDPServer_CMUcam(void)
   Summary:
-	Implements a simple UDP Server.
+	Implements a simple UDP Server (CMUcam communication).
 
   Description:
         Based on Microchip exemple available on M.A.L
@@ -38,17 +35,15 @@ extern NODE_INFO remoteNode;
   	None
   ***************************************************************************/
 
-void UDPServer_request(void)
+void UDPServer_CMUcam(void)
 {
-        static DWORD t = 0;
-
 	static enum {
 		UDP_REQUEST_HOME = 0,
 		UDP_REQUEST_LISTEN,
 		UDP_REQUEST_RECEIVED
 	} UDPRequestSM = UDP_REQUEST_HOME;
 
-        char buffer[4];
+        char buffer[6];
 
         static UDP_SOCKET	MySocket;
         BYTE                    i[MAX_COMMAND_SIZE];
@@ -61,7 +56,7 @@ void UDPServer_request(void)
 			// Since we expect to only receive broadcast packets and
 			// only send unicast packets directly to the node we last
 			// received from, the remote NodeInfo parameter can be anything
-			MySocket = UDPOpen(SERVER_PORT, NULL, SERVER_PORT);
+			MySocket = UDPOpen(SERVER_PORT_CMUCAM, NULL, SERVER_PORT_CMUCAM);
 
 			if(MySocket == INVALID_UDP_SOCKET)
 				return;
@@ -104,7 +99,7 @@ void UDPServer_request(void)
                         xSemaphoreTake(xSemaphoreTX,5000);
                         {
                             sprintf(buffer,"%d",count);
-                            UDPPutArray((BYTE *)buffer,4);
+                            UDPPutArray((BYTE *)buffer,6);
                             UDPFlush();
                             while(!UDPIsPutReady(MySocket));
                             // We need to split the data, because of UDP packet size limit
@@ -120,6 +115,164 @@ void UDPServer_request(void)
                         break;
 
 	}
+}
+
+
+
+/*****************************************************************************
+  Function:
+	void UDPServer_Cmd(void)
+  Summary:
+	Implements a simple UDP Server (Control communication).
+
+  Description:
+        Based on Microchip exemple available on M.A.L
+
+  Precondition:
+	UDP is initialized.
+
+  Parameters:
+	None
+
+  Returns:
+  	None
+  ***************************************************************************/
+
+void UDPServer_Cmd(void)
+{
+	static enum {
+		UDP_REQUEST_HOME = 0,
+		UDP_REQUEST_LISTEN,
+		UDP_REQUEST_RECEIVED
+	} UDPRequestSM = UDP_REQUEST_HOME;
+
+        char buffer[20];
+        static UDP_SOCKET	MySocket;
+        BYTE                    i[MAX_COMMAND_SIZE];
+        BYTE                    size;
+        CMD_CAR                 UDP_frame;
+	switch(UDPRequestSM)
+	{
+            case UDP_REQUEST_HOME :
+			// Open a UDP socket for inbound and outbound transmission
+			// Since we expect to only receive broadcast packets and
+			// only send unicast packets directly to the node we last
+			// received from, the remote NodeInfo parameter can be anything
+			MySocket = UDPOpen(SERVER_PORT_CMD, NULL, SERVER_PORT_CMD);
+
+			if(MySocket == INVALID_UDP_SOCKET)
+				return;
+			else
+				UDPRequestSM++;
+			break;
+
+		case UDP_REQUEST_LISTEN :
+                        // Do nothing if no data is waiting
+			if(!UDPIsGetReady(MySocket))
+                        {
+                           return;
+                        }
+				
+
+			// Receive the command
+			size = UDPGetArray((BYTE *)i,MAX_COMMAND_SIZE);
+                        /* Trame from UDP
+                         * Bytes | Bytes | etc
+                         * 
+                         */
+
+                        UDP_frame.for_back   =i[0];
+                        UDP_frame.speed_up   =i[1];
+                        UDP_frame.speed_down =i[2];
+                        UDP_frame.dir_up     =i[3];
+                        UDP_frame.dir_down   =i[4];
+                        
+                        Update_CMD(UDP_frame);
+                        UDPDiscard();
+
+                        // No break, we must continue without re-loop
+
+			// Change the destination to the unicast address of the last received packet
+                        memcpy((void*)&UDPSocketInfo[MySocket].remoteNode, (const void*)&remoteNode, sizeof(remoteNode));
+
+		case UDP_REQUEST_RECEIVED:
+			if(!UDPIsPutReady(MySocket))
+				return;
+                        sprintf(buffer,"V : %d, D : %d",Vitesse, ConsDir);
+                        UDPPutArray((BYTE *)buffer,20);
+                        UDPFlush();
+                        UDPRequestSM = UDP_REQUEST_LISTEN;
+                        break;
+
+	}
+}
+
+void Update_CMD(CMD_CAR car_info)
+{
+    if(car_info.for_back == FORWARD || car_info.for_back == BACKWARD){
+
+                /* Mise à jour sens d'avancement (avant/arrière) */
+                if(car_info.for_back == FORWARD){
+                    PORTClearBits(BROCHE_DIR_VITESSE);
+                }
+                else if(car_info.for_back == BACKWARD){
+                    PORTSetBits(BROCHE_DIR_VITESSE);
+                }
+
+                /* Gestion de la consigne de courant (couple -> vitesse) */
+                /* Protection Vitesse */
+                xSemaphoreTake(xSemaphoreVitesse,portMAX_DELAY);
+                {
+                    if(car_info.speed_up == 1){
+                        Vitesse += increment_vitesse;
+                    }
+                    else if(car_info.speed_down == 1){
+                        Vitesse -= increment_vitesse;
+                    }
+                    if(Vitesse > 100 || Vitesse < 0)
+                    {
+                        Vitesse = 0;
+                    }
+                }
+                xSemaphoreGive(xSemaphoreVitesse);
+
+                /* Gestion de la consigne de direction */
+
+                /* Protection ConsDir */
+                xSemaphoreTake(xSemaphoreConsDir,portMAX_DELAY);
+                {
+                    if(car_info.dir_up == 1){
+                        ConsDir += increment_direction;
+                    }
+                    else if(car_info.dir_down == 1){
+                        ConsDir -= increment_direction;
+                    }
+                    if(ConsDir > HAUT_BUTE)
+                    {
+                        ConsDir = HAUT_BUTE-10;
+                    }
+                    if(ConsDir < BAS_BUTE)
+                    {
+                        ConsDir = BAS_BUTE+10;
+                    }
+                }
+                xSemaphoreGive(xSemaphoreConsDir);
+            }
+            /* Fin Action de l'utilisateur (avant ou arrière) */
+            else{
+            /* Protection Vitesse*/
+                xSemaphoreTake(xSemaphoreVitesse,portMAX_DELAY);
+                {
+                    Vitesse = 0;
+                }
+                xSemaphoreGive(xSemaphoreVitesse);
+                /* Protection ConsDir */
+                xSemaphoreTake(xSemaphoreConsDir,portMAX_DELAY);
+                {
+                    ConsDir = ZERO_BUTE;
+                }
+                xSemaphoreGive(xSemaphoreConsDir);
+            }
 }
 
 void Large_UDP_Packet(int value, UDP_SOCKET MySocket)

@@ -39,7 +39,6 @@ char  stateControl = PROPULSION_CONTROL;// machnie d'état pour la commande
 struct_DebugPrint 	printData;  		// Données à afficher (debug)
 struct_mesures 		measuresReceive;	// Mesures reçues depuis l'ISR du timer 3
 
-
 	for( ;; ){
 
 		/* Récupération des grandeurs de mesures pour les lois de commande */
@@ -96,8 +95,14 @@ struct_mesures 		measuresReceive;	// Mesures reçues depuis l'ISR du timer 3
 	
 						sPropCommand = 0;
 					}
-	
+                                       
 					/* Mise à jour rapport cyclique pour module PWM propulsion */
+
+                                        /* Protection au niveau des erreurs de calculs */
+                                        if(sPropCommand < 10)
+                                        {
+                                            sPropCommand = 0;
+                                        }
 					SetDCOC4PWM(ReadPeriod3() * sPropCommand / 100 );
 			
 			case DIRECTION_CONTROL :

@@ -112,14 +112,17 @@ void HardwareInit(void){
 
 /*** GPI/O Configuration ***/			
 
+                        /*Broche de sens, debug*/
+                        PORTClearBits(IOPORT_A,  BIT_4 | BIT_5 | BIT_7 );
+ 			PORTSetPinsDigitalOut(IOPORT_A,  BIT_4 | BIT_5 | BIT_7);
 #if PROD_CARD
                         PORTClearBits(IOPORT_E, BIT_3 | BIT_2 | BIT_1 | BIT_0);
  			PORTSetPinsDigitalOut(IOPORT_E, BIT_3 | BIT_2 | BIT_1 | BIT_0);
 #endif
 #if DEV_CARD
                         /* Configuration - broches RA0, RA4, RA5, RA7 en sortie TOR */
-			PORTClearBits(IOPORT_A, BIT_7 | BIT_4 | BIT_5 | BIT_0);
- 			PORTSetPinsDigitalOut(IOPORT_A, BIT_7 | BIT_4 | BIT_5 | BIT_0);
+			PORTClearBits(IOPORT_A,  BIT_0);
+ 			PORTSetPinsDigitalOut(IOPORT_A,  BIT_0);
 #endif
 
 		
@@ -176,6 +179,6 @@ INFO_BUTE  info_bute;
 	/* Initialisation */
 	Vitesse = 0;  
 	init_ok = 0;
-	increment_direction = 2;
+	increment_direction = 10;
 	increment_vitesse = 1;
 }

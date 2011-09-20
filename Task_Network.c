@@ -20,11 +20,11 @@
  * Descoubes hugo  		16 mai  2011 vs 1.1              			                 
  *******************************************************************/
 void TaskNetwork( void *pvParameters ){
-portTickType xLastWakeTime;
-const portTickType xFrequency = NETWORK_STACK_REFRESH_PERIOD;
-DWORD 	secondCount;
-DWORD 	dwLastIP;
-BOOL	IPmodifBOOL = TRUE;
+    portTickType xLastWakeTime;
+    const portTickType xFrequency = NETWORK_STACK_REFRESH_PERIOD;
+    DWORD 	secondCount;
+    DWORD 	dwLastIP;
+    BOOL	IPmodifBOOL = TRUE;
 
 	/* Initialisations */
         xLastWakeTime = xTaskGetTickCount();
@@ -72,8 +72,9 @@ BOOL	IPmodifBOOL = TRUE;
 		}
          /* Call UDP server */
 #if CMUcam_IS_USE
-        UDPServer_request();
+        UDPServer_CMUcam();
 #endif
+        UDPServer_Cmd();
 	/* Bloque la tâche durant 10 Tick (Tick du noyau) */
          vTaskDelayUntil( &xLastWakeTime, xFrequency );
 	}
