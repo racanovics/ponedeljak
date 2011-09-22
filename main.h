@@ -64,6 +64,7 @@
 	#define NETWORK_STACK_REFRESH_PERIOD	10	// p�riode de rafrachissement de la stack IP en nb de tick du noyau
         #define SERVER_PORT_CMUCAM              9760
         #define SERVER_PORT_CMD                 9761
+        #define SERVER_PORT_CMD_ACC             9762
 	/* Command/control */
 	#define PROPULSION_CONTROL  	1
 	#define PROPULSION_PWM  		2
@@ -175,6 +176,15 @@
             char dir_up;
             char dir_down;
 	 } CMD_CAR ;
+
+         /* Sauvegarde des bornes pour l'asservissement de position*/
+	 typedef struct cmd_car_acc {
+            char for_back;
+            char fb;
+            char speed;
+            char signe;
+            char dir;
+	 } CMD_CAR_ACC ;
 	        
 /** FUNCTIONS and TASKS *********************************************/
 
@@ -194,9 +204,11 @@
         /* Network prototypes*/
         void UDPServer_CMUcam(void);
         void UDPServer_Cmd(void);
+        void UDPServer_Cmd_Acc(void);
         void Large_UDP_Packet(int value,UDP_SOCKET MySocket);
         void Update_CMD(CMD_CAR car_info);
-
+        void Update_CMD_Acc(CMD_CAR_ACC car_info);
+        
 	/* Task prototypes */
 	void TaskDebugUart(void *pvParameters);
 	void TaskControl(void *pvParameters);

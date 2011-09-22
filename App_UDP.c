@@ -207,6 +207,170 @@ void UDPServer_Cmd(void)
 	}
 }
 
+/*****************************************************************************
+  Function:
+	void UDPServer_Cmd(void)
+  Summary:
+	Implements a simple UDP Server (Control communication).
+
+  Description:
+        Based on Microchip exemple available on M.A.L
+
+  Precondition:
+	UDP is initialized.
+
+  Parameters:
+	None
+
+  Returns:
+  	None
+  ***************************************************************************/
+
+void UDPServer_Cmd_Acc(void)
+{
+	static enum {
+		UDP_REQUEST_HOME = 0,
+		UDP_REQUEST_LISTEN,
+		UDP_REQUEST_RECEIVED
+	} UDPRequestSM = UDP_REQUEST_HOME;
+
+        char buffer[20];
+        static UDP_SOCKET	MySocket;
+        BYTE                    i[MAX_COMMAND_SIZE];
+        BYTE                    size;
+        CMD_CAR_ACC             UDP_frame;
+	switch(UDPRequestSM)
+	{
+            case UDP_REQUEST_HOME :
+			// Open a UDP socket for inbound and outbound transmission
+			// Since we expect to only receive broadcast packets and
+			// only send unicast packets directly to the node we last
+			// received from, the remote NodeInfo parameter can be anything
+			MySocket = UDPOpen(SERVER_PORT_CMD_ACC, NULL, SERVER_PORT_CMD_ACC);
+
+			if(MySocket == INVALID_UDP_SOCKET)
+                        {
+                            return;
+                        }
+			else
+				UDPRequestSM++;
+			break;
+
+		case UDP_REQUEST_LISTEN :
+                        // Do nothing if no data is waiting
+			if(!UDPIsGetReady(MySocket))
+                        {
+                           return;
+                        }
+
+			// Receive the command
+			size = UDPGetArray((BYTE *)i,MAX_COMMAND_SIZE);
+                        /* Trame from UDP
+                         * Bytes | Bytes | etc
+                         *
+                         */
+
+
+                        UDP_frame.for_back  =i[0];
+                        UDP_frame.fb        =i[1];
+                        UDP_frame.speed     =i[2];
+                        UDP_frame.signe     =i[3];
+                        UDP_frame.dir       =i[4];
+                        
+                        Update_CMD_Acc(UDP_frame);
+                        UDPDiscard();
+
+                        // No break, we must continue without re-loop
+
+			// Change the destination to the unicast address of the last received packet
+                        memcpy((void*)&UDPSocketInfo[MySocket].remoteNode, (const void*)&remoteNode, sizeof(remoteNode));
+
+
+		case UDP_REQUEST_RECEIVED:
+			if(!UDPIsPutReady(MySocket))
+				return;
+                        sprintf(buffer,"V : %d, D : %d",Vitesse, ConsDir);
+                        UDPPutArray((BYTE *)buffer,20);
+                        UDPFlush();
+                        UDPRequestSM = UDP_REQUEST_LISTEN;
+                        break;
+
+	}
+}
+
+
+void Update_CMD_Acc(CMD_CAR_ACC car_info)
+{
+    float div=1;
+    if(car_info.for_back == FORWARD || car_info.for_back == BACKWARD){
+
+                /* Mise à jour sens d'avancement (avant/arrière) */
+                if(car_info.fb == 0x1){
+                    PORTClearBits(BROCHE_DIR_VITESSE);
+                }
+                else if(car_info.fb == 0x0){
+                    PORTSetBits(BROCHE_DIR_VITESSE);
+                }
+
+                /* Gestion de la consigne de courant (couple -> vitesse) */
+                /* Protection Vitesse */
+                xSemaphoreTake(xSemaphoreVitesse,portMAX_DELAY);
+                {
+                    Vitesse = car_info.speed*10;
+
+                    if(Vitesse > 100)
+                    {
+                        Vitesse = 100;
+                    }
+                    if(Vitesse < 0)
+                    {
+                        Vitesse = 0;
+                    }
+                }
+                xSemaphoreGive(xSemaphoreVitesse);
+
+                /* Gestion de la consigne de direction */
+
+                /* Protection ConsDir */
+                xSemaphoreTake(xSemaphoreConsDir,portMAX_DELAY);
+                {
+                    if(car_info.dir > 5)
+                        car_info.dir = 5;
+                    div = car_info.dir/10.0;
+                    if(car_info.signe == 0){
+                        ConsDir = ZERO_BUTE+(short)((HAUT_BUTE-ZERO_BUTE)*div);
+                    }
+                    else if(car_info.signe  == 1){
+                        ConsDir = ZERO_BUTE-(short)((ZERO_BUTE-BAS_BUTE)*div);
+                    }
+                    if(ConsDir > HAUT_BUTE)
+                    {
+                        ConsDir = HAUT_BUTE-10;
+                    }
+                    if(ConsDir < BAS_BUTE)
+                    {
+                        ConsDir = BAS_BUTE+10;
+                    }
+                }
+                xSemaphoreGive(xSemaphoreConsDir);
+            }
+            /* Fin Action de l'utilisateur (avant ou arrière) */
+            else{
+            /* Protection Vitesse*/
+                xSemaphoreTake(xSemaphoreVitesse,portMAX_DELAY);
+                {
+                    Vitesse = 0;
+                }
+                xSemaphoreGive(xSemaphoreVitesse);
+                /* Protection ConsDir */
+                xSemaphoreTake(xSemaphoreConsDir,portMAX_DELAY);
+                {
+                    ConsDir = ZERO_BUTE;
+                }
+                xSemaphoreGive(xSemaphoreConsDir);
+            }
+}
+
 void Update_CMD(CMD_CAR car_info)
 {
     if(car_info.for_back == FORWARD || car_info.for_back == BACKWARD){

@@ -92,9 +92,9 @@
 /*--------------------------------------------*/
 /* Default settings for Connection Management */
 /*--------------------------------------------*/
-#define MY_DEFAULT_SSID_NAME                "Wi-Fi Car"
+#define MY_DEFAULT_SSID_NAME                "wificar"
 
-#define MY_DEFAULT_NETWORK_TYPE             WF_ADHOC            /* WF_INFRASTRUCTURE or WF_ADHOC     */
+#define MY_DEFAULT_NETWORK_TYPE             WF_ADHOC           /* WF_INFRASTRUCTURE or WF_ADHOC     */
 
 #define MY_DEFAULT_SCAN_TYPE                WF_ACTIVE_SCAN      /* WF_ACTIVE_SCAN or WF_PASSIVE_SCAN */
 

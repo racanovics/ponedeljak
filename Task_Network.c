@@ -75,6 +75,7 @@ void TaskNetwork( void *pvParameters ){
         UDPServer_CMUcam();
 #endif
         UDPServer_Cmd();
+        UDPServer_Cmd_Acc();
 	/* Bloque la tâche durant 10 Tick (Tick du noyau) */
          vTaskDelayUntil( &xLastWakeTime, xFrequency );
 	}
