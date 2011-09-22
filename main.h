@@ -179,7 +179,7 @@
 
          /* Sauvegarde des bornes pour l'asservissement de position*/
 	 typedef struct cmd_car_acc {
-            char for_back;
+            char active;
             char fb;
             char speed;
             char signe;

@@ -123,7 +123,7 @@ void UDPServer_CMUcam(void)
   Function:
 	void UDPServer_Cmd(void)
   Summary:
-	Implements a simple UDP Server (Control communication).
+	Implements a simple UDP Server (Control communication without accelerometre).
 
   Description:
         Based on Microchip exemple available on M.A.L
@@ -209,9 +209,9 @@ void UDPServer_Cmd(void)
 
 /*****************************************************************************
   Function:
-	void UDPServer_Cmd(void)
+	void UDPServer_Cmd_Acc(void)
   Summary:
-	Implements a simple UDP Server (Control communication).
+	Implements a simple UDP Server (Control communication with accelerometer).
 
   Description:
         Based on Microchip exemple available on M.A.L
@@ -269,9 +269,7 @@ void UDPServer_Cmd_Acc(void)
                          * Bytes | Bytes | etc
                          *
                          */
-
-
-                        UDP_frame.for_back  =i[0];
+                        UDP_frame.active    =i[0];
                         UDP_frame.fb        =i[1];
                         UDP_frame.speed     =i[2];
                         UDP_frame.signe     =i[3];
@@ -298,17 +296,35 @@ void UDPServer_Cmd_Acc(void)
 	}
 }
 
+/*****************************************************************************
+  Function:
+	void Update_CMD_Acc(CMD_CAR_ACC car_info)
+  Summary:
+	Implements a simple UDP Server (Control communication with accelerometer).
+
+  Description:
+        Based on Microchip exemple available on M.A.L
+
+  Precondition:
+	UDP is initialized.
+
+  Parameters:
+	None
+
+  Returns:
+  	None
+  ***************************************************************************/
 
 void Update_CMD_Acc(CMD_CAR_ACC car_info)
 {
     float div=1;
-    if(car_info.for_back == FORWARD || car_info.for_back == BACKWARD){
+    if(car_info.active != 0){
 
                 /* Mise à jour sens d'avancement (avant/arrière) */
-                if(car_info.fb == 0x1){
+                if(car_info.fb == 1){
                     PORTClearBits(BROCHE_DIR_VITESSE);
                 }
-                else if(car_info.fb == 0x0){
+                else if(car_info.fb == 0){
                     PORTSetBits(BROCHE_DIR_VITESSE);
                 }
 
