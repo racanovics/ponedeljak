@@ -181,4 +181,5 @@ INFO_BUTE  info_bute;
 	init_ok = 0;
 	increment_direction = 10;
 	increment_vitesse = 1;
+        xSemaphoreTake(xSemaphoreCMUcamTransmissionEnable,portMAX_DELAY);
 }

@@ -124,7 +124,7 @@
         
         xSemaphoreHandle xSemaphoreVitesse;
 	xSemaphoreHandle xSemaphoreConsDir;
-	xSemaphoreHandle xSemaphoreTX;
+	xSemaphoreHandle xSemaphoreCMUcamTransmissionEnable;
 
         /* UART CMUcam comm variables*/
         volatile BYTE rxbuffer[RX_MAX];

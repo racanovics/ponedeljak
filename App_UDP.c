@@ -72,7 +72,7 @@ void UDPServer_CMUcam(void)
 			// Receive the command
 			size = UDPGetArray((BYTE *)i,MAX_COMMAND_SIZE);
                         // Alloc command variable
-                        
+                      
                         /*
                          * (!!! You must allocate an heap space on C32 linker option !!!)
                          */
@@ -80,12 +80,10 @@ void UDPServer_CMUcam(void)
                         command = (BYTE *)malloc(size*sizeof(BYTE));
                         // Define command variable
                         strncpy(command,i,size);
-                        free(command);
                         // Send command to CMUcam
                             
                         putsUART1(command);
-
-                        xSemaphoreTake(xSemaphoreTX,portMAX_DELAY);
+                        free(command);
                         UDPDiscard();
 
                         // No break, we must continue without re-loop
@@ -96,7 +94,7 @@ void UDPServer_CMUcam(void)
 		case UDP_REQUEST_RECEIVED:
 			if(!UDPIsPutReady(MySocket))
 				return;
-                        xSemaphoreTake(xSemaphoreTX,5000);
+                        xSemaphoreTake(xSemaphoreCMUcamTransmissionEnable,5000);
                         {
                             sprintf(buffer,"%d",count);
                             UDPPutArray((BYTE *)buffer,6);
@@ -107,7 +105,6 @@ void UDPServer_CMUcam(void)
                         }
                         // Just if we cannot detect the end of frame
                         count = 0;
-                        xSemaphoreGive(xSemaphoreTX);
 			/* Not useful here (No break before and no ++ on the SM)
                          * Just to be clear */
                         UDPRequestSM = UDP_REQUEST_LISTEN;

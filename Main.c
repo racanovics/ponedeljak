@@ -80,7 +80,35 @@ void IntUart1AHandler(void)
 {
     // Pour tester si nous devons réveiller une tache
     static portBASE_TYPE xYieldRequired = pdFALSE;
+    // We use a state machine for processing in buffer fill
+    static enum  {
+		UART_FIRST_CHAR = 0,
+                UART_FILL_BUFFER
+    } UARTSM = UART_FIRST_CHAR;
 
+    // We use a state machine for detect the begging of a frame (ACK)
+    static enum {
+		A = 0,
+		AC,
+                ACK,
+                INIT
+	} INIT_DETEC = A;
+    // We use a state machine for detect the begging of frame for bad command (NCK)
+    static enum {
+		N = 0,
+		NC,
+                NCK,
+                BAD
+	} BAD_DETEC = N;
+
+    // We use a state machine for detect the end of a frame (@FIN)
+    static enum {
+		TEST = 0,
+		F,
+		FI,
+                FIN,
+                END
+	} FIN_DETEC = TEST;
     
     unsigned char rx;
 
@@ -92,8 +120,95 @@ void IntUart1AHandler(void)
 
         // We read the receive character
         rx = (char)ReadUART1();
-        xQueueSendFromISR(xQueueCMUcam,&rx,&xYieldRequired);
-        portEND_SWITCHING_ISR( xYieldRequired );
+        switch(UARTSM)
+        {
+            case UART_FIRST_CHAR :
+                count = 0;
+                /* We test if is a beginning of a frame or wrong frame
+                 * (print_ACK or print_NCK in CMUcam)
+                */
+                switch(rx)
+                {
+                    case 'A' : INIT_DETEC++;
+                               break;
+                    case 'N' : BAD_DETEC++;
+                               break;
+                    case 'C' : INIT_DETEC++;
+                               BAD_DETEC++;
+                               break;
+                    case 'K' : INIT_DETEC++;
+                               BAD_DETEC++;
+                               break;
+                    default  : INIT_DETEC=A;
+                               BAD_DETEC=N;
+                               break;
+                }
+
+                // If it's a new frame,
+                if(INIT_DETEC == INIT)
+                {
+                    INIT_DETEC = A;
+                    BAD_DETEC = N;
+                    UARTSM = UART_FILL_BUFFER;
+                    rxbuffer[0] = 'A';
+                    rxbuffer[1] = 'C';
+                    rxbuffer[2] = 'K';
+                    count=3;
+                }
+                else if(BAD_DETEC == BAD)
+                {
+                    rxbuffer[0] = 'N';
+                    rxbuffer[1] = 'C';
+                    rxbuffer[2] = 'K';
+                    count=3;
+                    INIT_DETEC = A;
+                    BAD_DETEC = N;
+                    UARTSM = UART_FIRST_CHAR;
+                    // On désactive l'interruption en RX de l'UART
+                    DisableIntU1RX;
+                    // We release the semaphore for UDP send
+                    xSemaphoreGiveFromISR(xSemaphoreCMUcamTransmissionEnable,&xYieldRequired);
+                    portEND_SWITCHING_ISR(xYieldRequired);
+                }
+                break;
+
+            case UART_FILL_BUFFER :
+                // We test if is a end of a frame (print(@FIN) in CMUcam)
+                switch(rx)
+                {
+                    case '@' : FIN_DETEC++;
+                               break;
+                    case 'F' : FIN_DETEC++;
+                               break;
+                    case 'I' : FIN_DETEC++;
+                               break;
+                    case 'N' : FIN_DETEC++;
+                               break;
+                    default  : FIN_DETEC=TEST;
+                               break;
+                }
+                if( (count >= RX_MAX) || FIN_DETEC == END)
+                {
+                    // We remove the last 3 char (@FI)
+                    if(FIN_DETEC == END)
+                        count = count - 3;
+                    // We re init the FIN detector
+                    FIN_DETEC = TEST;
+                    // We re init the UART state machine
+                    UARTSM = UART_FIRST_CHAR;
+                    /* We disable the interruption from UART until all UDP packet was send
+                     * We enable the interruption in UDP_server part
+                    */
+                    DisableIntU1RX;
+                    // We release the semaphore for UDP send
+                    xSemaphoreGiveFromISR(xSemaphoreCMUcamTransmissionEnable,&xYieldRequired);
+                    portEND_SWITCHING_ISR(xYieldRequired);
+                    break;
+                }
+                rxbuffer[count]=rx;
+                count++;
+                break;
+        }
     }
 }
 

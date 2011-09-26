@@ -23,36 +23,7 @@
  *******************************************************************/
 void TaskCMUcam(void *pvParameters)
 {
-    // We use a state machine for processing in buffer fill
-    enum  {
-		UART_FIRST_CHAR = 0,
-                UART_FILL_BUFFER
-    } UARTSM = UART_FIRST_CHAR;
-
-    // We use a state machine for detect the begging of a frame (ACK)
-    enum {
-		A = 0,
-		AC,
-                ACK,
-                INIT
-	} INIT_DETEC = A;
-    // We use a state machine for detect the begging of frame for bad command (NCK)
-    enum {
-		N = 0,
-		NC,
-                NCK,
-                BAD
-	} BAD_DETEC = N;
-
-    // We use a state machine for detect the end of a frame (@FIN)
-    enum {
-		TEST = 0,
-		F,
-		FI,
-                FIN,
-                END
-	} FIN_DETEC = TEST;
-    unsigned char rx;
+    
     while(1)
         {
         // Receive data from UART
@@ -105,7 +76,7 @@ void TaskCMUcam(void *pvParameters)
                     // On désactive l'interruption en RX de l'UART
                     DisableIntU1RX;
                     // We release the semaphore for UDP send
-                    xSemaphoreGive(xSemaphoreTX);
+                    xSemaphoreGive(xSemaphoreCMUcamTransmissionEnable);
                 }
                 break;
 
@@ -138,7 +109,7 @@ void TaskCMUcam(void *pvParameters)
                     */
                     DisableIntU1RX;
                     // We release the semaphore for UDP send
-                    xSemaphoreGive(xSemaphoreTX);
+                    xSemaphoreGive(xSemaphoreCMUcamTransmissionEnable);
                     break;
                 }
                 rxbuffer[count]=rx;

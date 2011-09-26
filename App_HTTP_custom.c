@@ -121,7 +121,6 @@ HTTP_IO_RESULT HTTPExecuteGet(void)
 	
 	if(!memcmppgm2ram(filename, "initialisation.html", 19))
 	{
-            // TODO : Fix that
 		// Determine which "BUTEE" was choose
 		ptr = HTTPGetArg(curHTTP.data, (BYTE *)"save_value");
                 ptr2 = HTTPGetArg(curHTTP.data, (BYTE *)"incdir");

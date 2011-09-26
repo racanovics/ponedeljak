@@ -85,7 +85,6 @@ to exclude the API function. */
 #define configINTERFACE_HTTP_STACK_SIZE		(configMINIMAL_STACK_SIZE)
 #define configASSERVISSEMENT_STACK_SIZE		(configMINIMAL_STACK_SIZE)
 #define configAFFICHAGE_STACK_SIZE		    (configMINIMAL_STACK_SIZE)
-#define configCMUcam_STACK_SIZE                 (configMINIMAL_STACK_SIZE)
 #endif /* FREERTOS_CONFIG_H */
 
 

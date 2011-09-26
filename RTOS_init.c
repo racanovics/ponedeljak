@@ -33,7 +33,7 @@ void RTOSInit(void){
 
 	vSemaphoreCreateBinary(xSemaphoreVitesse); 			// Protection variable globale vitesse
 	vSemaphoreCreateBinary(xSemaphoreConsDir); 			// Protection variable globale de consigne de direction "consDir"
-        vSemaphoreCreateBinary(xSemaphoreTX);
+        vSemaphoreCreateBinary(xSemaphoreCMUcamTransmissionEnable);
 
 /*** TASK Create ***/
 	
@@ -41,11 +41,9 @@ void RTOSInit(void){
 	/* Task Command 		-> 3	*/	
 	/* Task Debug 			-> 0	*/
 	/* Task Network 		-> 2	*/
-        /* Task CMUcam 			-> 1	*/
         
 	xTaskCreate(TaskControl, "Task Control", configASSERVISSEMENT_STACK_SIZE, NULL, tskIDLE_PRIORITY + 3, NULL);
 	xTaskCreate(TaskDebugUart, "Task Debug", configAFFICHAGE_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 	xTaskCreate(TaskNetwork, "Task Network", configRESEAU_STACK_SIZE, NULL, tskIDLE_PRIORITY + 2, NULL);
-	xTaskCreate(TaskCMUcam, "Task CMUcam", configCMUcam_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL);
 
 }
