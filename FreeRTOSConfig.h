@@ -40,9 +40,9 @@
 #define FREERTOS_CONFIG_H
 
 #define configUSE_PREEMPTION					1
-#define configTICK_RATE_HZ						((portTickType) 1000)
+#define configTICK_RATE_HZ					((portTickType) 10000)
 #define configPERIPHERAL_CLOCK_HZ				(40000000UL)
-#define configCPU_CLOCK_HZ						(80000000UL)
+#define configCPU_CLOCK_HZ					(80000000UL)
 
 #define configUSE_16_BIT_TICKS					0
 #define configUSE_IDLE_HOOK						0

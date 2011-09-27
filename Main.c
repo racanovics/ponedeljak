@@ -300,12 +300,13 @@ int main(void){
 	/* Configurations périphériques internes */
 	HardwareInit();	
 
-	/* Configurations variables application */
-	SoftwareInit();
+	
 
 	/* Configurations Real Time Operating System */		
 	RTOSInit();
         
+        /* Configurations variables application */
+	SoftwareInit();
         /* Démarrage mode multi-tâche */
 #if DEBUG_IS_ON
         UARTputs("\r\n\n*** Starting WI-FI Car Application ***");
