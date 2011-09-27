@@ -85,7 +85,7 @@
 /*  To DISABLE the serial console application: Comment out '#define WF_CONSOLE'       */
 /*  To ENABLE the serial console application: Uncomment out '#define WF_CONSOLE'      */
 /*====================================================================================*/
-#define WF_CONSOLE              /* needed for console demo */
+//#define WF_CONSOLE              /* needed for console demo */
 //#define WF_CONSOLE_IFCFGUTIL    /* needed for console demo */
 
 

@@ -53,23 +53,12 @@ void TaskNetwork( void *pvParameters ){
         // This tasks invokes each of the core stack application tasks
         StackApplications();
 
-		/* Wi-Fi Stack */
-		#if defined(WF_CONSOLE)
-			WFConsoleProcess();
-			IperfAppCall();
-			WFConsoleProcessEpilogue();
-		#endif
-
-		#if defined ( WF_CONSOLE ) && defined ( EZ_CONFIG_SCAN ) 
-        	WFDisplayScanMgr();
-        #endif
-
-		/* Affichage de la nouvelle IP (via UART) si changement */
-		if(dwLastIP != AppConfig.MyIPAddr.Val){
-
-			dwLastIP = AppConfig.MyIPAddr.Val;
-			xQueueSend(xQueueDebugPrintIP, &IPmodifBOOL, 0);		// non bloquant
-		}
+        /* Affichage de la nouvelle IP (via UART) si changement */
+	if(dwLastIP != AppConfig.MyIPAddr.Val){
+            
+            dwLastIP = AppConfig.MyIPAddr.Val;
+            xQueueSend(xQueueDebugPrintIP, &IPmodifBOOL, 0);		// non bloquant
+	}
          /* Call UDP server */
 #if CMUcam_IS_USE
         UDPServer_CMUcam();
