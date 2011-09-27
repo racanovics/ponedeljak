@@ -165,8 +165,10 @@
 	 typedef struct info_bute { 
 	    short zero;
 	    short haut;
-		short bas;
-	 } INFO_BUTE ;
+            short bas;
+            char incvit;
+            char incdir;
+	 } INFO_SAVE ;
 
         /* Sauvegarde des bornes pour l'asservissement de position*/
 	 typedef struct cmd_car {

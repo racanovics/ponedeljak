@@ -168,18 +168,17 @@ void HardwareInit(void){
  * Descoubes hugo  	16 mai  2011 vs 1.1              
  *******************************************************************/
 void SoftwareInit(void){
-INFO_BUTE  info_bute;   
+INFO_SAVE  info;
 
 	/* Récupération et initialisation des butées pour la direction */
-	ReadAuxVar(0, (BYTE*) &info_bute, sizeof(info_bute));  
-	ZERO_BUTE = info_bute.zero;
-	HAUT_BUTE = info_bute.haut;
-	BAS_BUTE = info_bute.bas;
-
+	ReadAuxVar(0, (BYTE*) &info, sizeof(info));  
+	ZERO_BUTE = info.zero;
+	HAUT_BUTE = info.haut;
+	BAS_BUTE = info.bas;
+        increment_direction = info.incdir;
+        increment_vitesse = info.incvit;
 	/* Initialisation */
 	Vitesse = 0;  
 	init_ok = 0;
-	increment_direction = 10;
-	increment_vitesse = 1;
         xSemaphoreTake(xSemaphoreCMUcamTransmissionEnable,portMAX_DELAY);
 }

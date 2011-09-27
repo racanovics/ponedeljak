@@ -113,7 +113,7 @@ HTTP_IO_RESULT HTTPExecuteGet(void)
 	BYTE filename[20];
 
 	
-	INFO_BUTE  info_bute; 
+	INFO_SAVE  info;
 	// Load the file name
 	// Make sure BYTE filename[] above is large enough for your longest name
 	MPFSGetFilename(curHTTP.file, filename, 20);
@@ -223,17 +223,21 @@ HTTP_IO_RESULT HTTPExecuteGet(void)
 		// Toggle the specified LED
 		switch(*ptr) {
 			case '1':
-				info_bute.zero = ZERO_BUTE;
-				info_bute.haut = HAUT_BUTE;
-				info_bute.bas = BAS_BUTE;
-				SaveAuxVar(0, (BYTE*)&info_bute, sizeof(info_bute));  
+				info.zero = ZERO_BUTE;
+				info.haut = HAUT_BUTE;
+				info.bas = BAS_BUTE;
+                                info.incvit = increment_vitesse;
+                                info.incdir = increment_direction;
+				SaveAuxVar(0, (BYTE*)&info, sizeof(info));  
 				etat_save_info = 1;
 				break;
 			case '2':
-				ReadAuxVar(0, (BYTE*)&info_bute, sizeof(info_bute));  
-				ZERO_BUTE= info_bute.zero;
-				HAUT_BUTE=info_bute.haut;
-				BAS_BUTE =info_bute.bas;
+				ReadAuxVar(0, (BYTE*)&info, sizeof(info));  
+				ZERO_BUTE = info.zero;
+                                HAUT_BUTE = info.haut;
+                                BAS_BUTE = info.bas;
+                                increment_direction = info.incdir;
+                                increment_vitesse = info.incvit;
 				etat_save_info = 2;
 				break;
 		}
