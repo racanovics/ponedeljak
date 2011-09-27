@@ -406,9 +406,13 @@ void Update_CMD(CMD_CAR car_info)
                     else if(car_info.speed_down == 1){
                         Vitesse -= increment_vitesse;
                     }
-                    if(Vitesse > 100 || Vitesse < 0)
+                    if(Vitesse > 100)
                     {
-                        Vitesse = 0;
+                        Vitesse = 100;
+                    }
+                    else if( Vitesse<0)
+                    {
+                        Vitesse =0;
                     }
                 }
                 xSemaphoreGive(xSemaphoreVitesse);
